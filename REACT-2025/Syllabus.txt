@@ -1,3 +1,5 @@
+ What is a Memory Leak? | Example Explained in js
+
 Babel 
 useState is state chang rasponsabal 
 this chang propagate in dom or ui
