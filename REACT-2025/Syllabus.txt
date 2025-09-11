@@ -1,4 +1,4 @@
-bable 
+Babel 
 useState is state chang rasponsabal 
 this chang propagate in dom or ui
 
@@ -24,7 +24,6 @@ In React full explan full details and give some pactic Questions and give Interv
 -Understanding the virtual DOM and how React improves performance
 -Virtual DOM vs Real DOM
 -React Architecture
--Setting up a React project using create-react-app or Vite
 -Install React-Vite Boilerplate and Installing React Developer Tools.
 -nderstanding `JSX or JavaScript XML` and Its Importance - `Fragments` , `Components Naming` .
 
@@ -527,3 +526,6 @@ Blog CMS
 Chat App (real-time, sockets)
 Image Gallery (filter, likes, comments)
 Netflix/Spotify Clone (API integration)
+
+
+https://www.cymath.com/practice
