@@ -12,6 +12,8 @@ function App() {
     <>
     {/* <Header/> */}
     <NetFlixSeriesCard />
+    <NetFlixSeriesCard />
+    <NetFlixSeriesCard />
     {/* <Footer/> */}
     </>
   )
