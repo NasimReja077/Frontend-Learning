@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Lovely Runner",
+    "id": "lovely-runner",
+    "img_url": "https://i.pinimg.com/736x/b8/63/8f/b8638f83d2ffe82b09501b9351716c6f.jpg",
+    "rating": "9.8",
+    "description": "Im Sol travels back in time to prevent the tragic fate of her favorite star, Ryu Sun Jae.",
+    "cast": ["Kim Hye Yoon", "Byeon Woo Seok", "Song Geon Hee"],
+    "genre": ["Romantic Comedy", "Fantasy"],
+    "watch_url": "https://www.viki.com/tv/40466c-lovely-runner"
+  },
+  {
+    "name": "Stranger Things",
+    "id": "stranger-things",
+    "img_url": "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "rating": "8.7",
+    "description": "A group of young friends witness supernatural forces and secret government exploits.",
+    "cast": ["Winona Ryder", "David Harbour", "Millie Bobby Brown"],
+    "genre": ["Drama", "Fantasy", "Horror"],
+    "watch_url": "https://www.netflix.com/title/80057281"
+  },
+  {
+    "name": "Queen of Tears",
+    "id": "queen-of-tears",
+    "img_url": "https://images.unsplash.com/photo-1718268289378-1fd42d53bbdb?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "rating": "6.5",
+    "description": "A gripping tale of love, loss, and resilience set against the backdrop of a war-torn nation.",
+    "cast": ["Kim Soo Hyun", "Kim Ji Won"],
+    "genre": ["Drama", "Romance"],
+    "watch_url": "https://www.viki.com/tv/23456789c-queen-of-tears"
+  },
+  {
+    "name": "The Glory",
+    "id": "the-glory",
+    "img_url": "https://i.pinimg.com/1200x/f3/47/9c/f3479cbaa237c324e868557a5c13dcb4.jpg",
+    "rating": "8.9",
+    "description": "A woman plots revenge against her childhood bullies who destroyed her life.",
+    "cast": ["Song Hye Kyo", "Lee Do Hyun"],
+    "genre": ["Thriller", "Drama"],
+    "watch_url": "https://www.netflix.com/title/81519223"
+  },
+  {
+    "name": "All of Us Are Dead",
+    "id": "all-of-us-are-dead",
+    "img_url": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1170&auto=format&fit=crop",
+    "rating": "7.5",
+    "description": "A high school becomes ground zero for a zombie outbreak, trapping students inside.",
+    "cast": ["Park Ji Hu", "Yoon Chan Young", "Cho Yi Hyun"],
+    "genre": ["Horror", "Thriller", "Zombie"],
+    "watch_url": "https://www.netflix.com/title/81237994"
+  },
+  {
+    "name": "Money Heist",
+    "id": "money-heist",
+    "img_url": "https://miro.medium.com/0*D2egv3vcdicC-aJB",
+    "rating": "8.2",
+    "description": "A criminal mastermind known as 'The Professor' leads a daring heist on the Royal Mint of Spain.",
+    "cast": ["Álvaro Morte", "Úrsula Corberó", "Pedro Alonso"],
+    "genre": ["Crime", "Thriller", "Drama"],
+    "watch_url": "https://www.netflix.com/title/80192098"
+  },
+  {
+    "name": "Crash Landing on You",
+    "id": "crash-landing-on-you",
+    "img_url": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1170&auto=format&fit=crop",
+    "rating": "9.1",
+    "description": "A South Korean heiress accidentally paraglides into North Korea and meets an army officer.",
+    "cast": ["Hyun Bin", "Son Ye Jin"],
+    "genre": ["Romance", "Comedy", "Drama"],
+    "watch_url": "https://www.netflix.com/title/81159258"
+  },
+  {
+    "name": "Squid Game",
+    "id": "squid-game",
+    "img_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWeKxCbyaGDhr36Ovj5PJYXT3BuNyd8W2RBGmLvngkENI4R6K2cSjgQH6154Ekirl3I4g&usqp=CAU",
+    "rating": "8.0",
+    "description": "Hundreds of cash-strapped contestants accept an invitation to compete in deadly children's games.",
+    "cast": ["Lee Jung Jae", "Park Hae Soo", "Wi Ha Joon"],
+    "genre": ["Thriller", "Drama", "Survival"],
+    "watch_url": "https://www.netflix.com/title/81040344"
+  },
+  {
+    "name": "Sweet Home",
+    "id": "sweet-home",
+    "img_url": "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1170&auto=format&fit=crop",
+    "rating": "7.9",
+    "description": "As humans turn into savage monsters, one troubled teenager and his neighbors fight to survive.",
+    "cast": ["Song Kang", "Lee Jin Wook", "Lee Si Young"],
+    "genre": ["Horror", "Action", "Fantasy"],
+    "watch_url": "https://www.netflix.com/title/81061734"
+  }
+]
