@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+.checkList{
+     text-decoration: line-through;
+}
+.notCheckList{
+     text-decoration: none;
+}
