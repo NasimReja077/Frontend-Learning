@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>HTML FORM</title>
+</head>
+<body>
+     <header>
+          <ul>
+               <li><a href="index.html">HomePage</a></li>
+               <li><a href="internet-page1.html">How the Internet Works (Page 1)</a></li>
+               <li><a href="internet-page2.html">How the Internet Works (Page 2)</a></li>
+               <li><a href="HTML-Intro.html">HTML Intro</a></li>
+               <li><a href="html3.html">HTML Div,Header,Main,Footer Tag</a></li>
+               <li><a href="HTML-From.html">HTML FORM</a></li>
+               <li><a href="html-media.html">HTML Media</a></li>
+               <li><a href="Contact.html">Contact Us</a></li>
+               <li><a href="Outher.html">Outher Courses</a></li>
+               <li><a href="About.html">About us</a></li>
+          </ul>
+     </header>
+     <br><br>
+     <form action="">
+          <label for="firstName">FirstName</label>
+          <input type="text" id="firstName" name="firstName">
+          <br><br>
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName">
+          <br><br>
+          <label for="userAge">Age (18-99):</label>
+          <br>
+          <input type="number" id="userAge" name="age" min="18" max="99">
+          <br>
+          <label for="birthDate">Date of Birth:</label>
+          <br>
+          <input type="date" id="birthDate" name="dob">
+          <br>
+          <label for="country">Country:</label>
+          <br>
+          <select id="country" name="country">
+               <option value="">--Please choose an option--</option>
+               <option value="In">India</option>
+               <option value="Us">USA</option>
+               <option value="UK">United Kingdom</option>
+          </select>
+          <br>
+          <label for="userPass">Password:</label>
+          <br>
+          <input type="password" id="userPass" name="userPassword">
+          <br><br>
+          <label>T-Shirt Size:</label>
+          <br>
+          <input type="radio" id="sizeS" name="shirtSize" value="small">
+          <label for="sizeS">Small</label>
+          <br>
+          <input type="radio" id="sizeL" name="shirtSize" value="large">
+          <label for="sizeL">Large</label>
+          <br><br>
+          <label for="myfile">Select a file:</label>
+          <input type="file" id="myfile" name="myfiles">
+          <br><br>
+          <label for="Tcolor">Select your favorite T-Shirt color:</label>
+          <input type="color" id="Tcolor" name="tcolors" value="#ff0000" >
+          <br>
+          <label>Pizza Toppings:</label>
+          <br>
+          <input type="checkbox" id="toppingPep" name="toppings" value="pepperoni">
+          <label for="toppingPep">Pepperoni</label>
+          <br>
+          <input type="checkbox" id="toppingOni" name="toppings" value="onions">
+          <label for="toppingOni">Onions</label>
+          <br><br>
+          <label for="contents">Any special instructions?</label><br>
+          <textarea id="contents" class="contents" rows="5" cols="50"></textarea>
+          <br><br>
+          <label for="points">Points (between 0 and 10):</label>
+          <br>
+          <input type="range" id="points" name="points" min="0" max="10">
+          <br><br>
+          <button type="submit">
+               <strong>Submit</strong> Your Order
+          </button>
+     </form>
+     <br><br>
+     <p><a href="html3.html">Previous Page</a></p>
+      <p><a href="html-media.html">Next Page ➡</a></p>
+
+      <hr>
+     <footer>
+          <p>Copyright &copy; All rights are reserved</p>
+     </footer>
+</body>
+</html>
