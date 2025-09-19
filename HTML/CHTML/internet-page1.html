@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Web Development Course</title>
+</head>
+<body>
+
+     <header>
+          <ul>
+               <li><a href="index.html">HomePage</a></li>
+               <li><a href="internet-page1.html">How the Internet Works (Page 1)</a></li>
+               <li><a href="internet-page2.html">How the Internet Works (Page 2)</a></li>
+               <li><a href="HTML-Intro.html">HTML Intro</a></li>
+               <li><a href="html3.html">HTML Div,Header,Main,Footer Tag</a></li>
+               <li><a href="HTML-From.html">HTML FORM</a></li>
+               <li><a href="html-media.html">HTML Media</a></li>
+               <li><a href="Contact.html">Contact Us</a></li>
+               <li><a href="Outher.html">Outher Courses</a></li>
+               <li><a href="About.html">About us</a></li>
+          </ul>
+     </header>
+     <br><br>
+     
+     <main>
+               <h1><b><i><u>How the Internet Works (Page 1)</u></i></b></h1>
+     <hr>
+     <h2><b><u>Principle 1</u></b>: The Need to Share Information</h2>
+     <p>
+          The most fundamental truth is that we have information on one computer (Computer A) and we want it to be on another computer (Computer B). These computers are not in the same room.
+    <br>
+          How do we solve this? The simplest, most primitive way is to physically carry the information (e.g., on a USB stick). This works, but it's slow and doesn't scale. We need a direct, electronic connection.
+    <br>
+          So, we run a cable (like an ethernet cable or a fiber optic line) between Computer A and Computer B. We can now send electrical signals or pulses of light down this cable. We can agree on a simple code: a high-voltage signal means "1," and a low-voltage signal means "0."
+    <br>
+          We have just created the most basic form of a network: a <b>direct link</b>. We can now send bits (1s and 0s) between two computers.
+     </p>
+     <img src="./img2.jpg" alt="Ethernet Cable" width="400">
+     <br>
+     <h2><b><u>Principle 2</u></b>: The Problem of Scale</h2>
+     <p>
+          This works for two computers. But what if we have three computers (A, B, and C) and they all need to talk to each other? We would need a cable from A to B, from B to C, and from A to C. For four computers, we'd need six cables. For 100 computers, we'd need 4,950 cables.
+     <br>
+          This is a failure of scale. Connecting every machine to every other machine directly is physically impossible.
+     <br>
+          The logical solution is to have a central device. Every computer connects to this one central point (let's call it a **Switch**). When Computer A wants to talk to Computer C, it sends the message to the switch, and the switch forwards it only to Computer C.
+     <br>
+          We have just invented a **Local Network**. A group of computers in close proximity (like an office or a home) can now communicate efficiently.
+     </p>
+     <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230511171149/Network-Switch-01-copy.webp" alt="Network Switch" width="400">
+     <br>
+     <h2><b><u>Principle 3</u></b>: Connecting Networks</h2>
+     <p>
+          If one office has a LAN and another office has a LAN, how can they talk?  
+          A <b>Router</b> connects one network to another. 
+          Many routers linked together form the Internet — a <i>network of networks</i>.
+     </p>
+     <img src="https://c8.alamy.com/comp/JXP8H6/wifi-router-wireless-internet-connection-icon-JXP8H6.jpg" 
+       alt="Router" width="400">
+     <br>
+     <h2><b><u>Principle 4</u></b>: The Problem of Finding Anyone (Addressing)</h2>
+     <p>We have built a global web of interconnected networks. If I'm on my computer in my office, how do I send a message to a specific server in another country? There are millions of computers. I need a unique address for every single device.
+     <br>
+     This gives rise to the need for a universal addressing system. Just like the postal service needs a unique street address for every house in the world, our network of networks needs a unique address for every connected device.
+     <br>
+     This is the reason the <b>IP Address (Internet Protocol Address)</b> exists. It's a unique label (e.g., 142.250.184.142) assigned to each device. When a router sees a message, it looks at the destination IP address and says, "Based on this address, I don't need to send it to the network on my left; I need to send it to the network on my right to get it one step closer to its final destination." Routers don't know the full path; they just know the next best "hop" to send the message on.</p>
+     <h4>Diagram</h4>
+     <p>
+          Example: Computer A (12.3.45.6) sends "Hi" to Computer B (121.3.45.16).
+     </p>
+     <img src="./Image1.png" 
+       alt="Internet Communication Diagram" width="500">
+     <br>
+     <h2><b><u>Principle 5</u></b>: The Problem of Reliability and Fairness</h2>
+     <p>
+          If I want to send a large file, like a 1-hour video, it is a huge stream of data. If I try to send it all at once:
+          <br>
+          1. I would completely monopolize the connection, and no one else could send anything until my video was done.
+          2. If even a single bit of information gets corrupted during the transfer, the entire file is ruined, and I have to start over from the beginning.
+          <br>
+          This is inefficient and unreliable. The logical solution is to break the large file into many thousands of small, numbered pieces. Let's call them Packets.
+          <br>
+          Each packet is like a tiny envelope. It contains:
+
+          - A small piece of the data (a "payload").
+          - The destination IP address (where it's going).
+          - The sender's IP address (so they can reply).
+          - A number, so the receiving computer knows how to reassemble them in the correct order ("Packet 1 of 5,000," "Packet 2 of 5,000," etc.).
+<br>
+          These packets can travel independently across the internet, sometimes even taking different routes. The receiving computer gathers all the packets, checks if any are missing (and requests them again if they are), and reassembles them in the correct order to recreate the original file.
+
+          This system of rules for addressing, breaking down, sending, and reassembling data is called a **Protocol**. The main one used on the internet is **TCP/IP (Transmission Control Protocol / Internet Protocol)**.
+     </p>
+     </main>
+     <br>
+     <section class="content" id="more">
+      <h2>Short step-by-step summary</h2>
+      <ol class="muted">
+        <li><strong>Direct link:</strong> Two devices connect physically (or wireless) and send bits.</li>
+        <li><strong>Switch/LAN:</strong> Multiple devices attach to a switch so they can talk locally.</li>
+        <li><strong>Router:</strong> Routers connect different networks and forward packets between them.</li>
+        <li><strong>IP address:</strong> Each device gets an address so routers can route packets.</li>
+        <li><strong>Packets & TCP:</strong> Data is split into numbered packets; TCP handles lost packets, order, and retransmission to ensure reliability.</li>
+      </ol>
+
+      <div class="details" style="margin-top:12px;">
+        <h3 style="margin-top:0;">Extra — Common terms explained</h3>
+        <p><strong>MAC address:</strong> Hardware address used by the local LAN for delivery (different from IP which is for routing).</p>
+        <p><strong>DNS:</strong> DNS translates human-friendly names (like <em>example.com</em>) into IP addresses.</p>
+        <p><strong>Port:</strong> A number identifying a specific service on a device (e.g., HTTP typically uses port 80).</p>
+        <p><strong>Firewall:</strong> A filter that allows/blocks traffic based on rules.</p>
+      </div>
+    </section>
+     
+     <p><a href="index.html">Previous Page</a></p>
+     <p><a href="internet-page2.html">Next Page ➡</a></p>
+
+     <hr>
+     <footer>
+          <p>Copyright &copy; All rights are reserved</p>
+     </footer>
+</body>
+</html>
