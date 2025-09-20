@@ -35,7 +35,7 @@ Understanding JSX (JavaScript XML): -
 -Writing JSX
 -JSX syntax rules
 -JSX: A syntax extension for JavaScript that allows writing HTML in JS
--Embedding expressions
+-Embedding expressions 
 -Expressions in JSX
 -Attributes
 -Children
@@ -43,6 +43,7 @@ Understanding JSX (JavaScript XML): -
 -Fragments (<>...</>)
 -Understanding `JSX or JavaScript XML` and Its Importance - `Fragments` , `Components Naming` .
 -Rendering elements and basic React components
+
 
 
 
