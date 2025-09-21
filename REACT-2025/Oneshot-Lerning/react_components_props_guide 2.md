@@ -1007,6 +1007,7 @@ export default App;
 
 **Performance Considerations:**
 - Use React.memo for expensive components
+
 - Avoid creating objects/functions in render
 - Implement proper shouldComponentUpdate logic
 - Use keys correctly in lists
