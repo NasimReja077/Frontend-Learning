@@ -1,6 +1,7 @@
 # React Components & Props: Complete In-Depth Guide
 
 ## Table of Contents
+
 1. [Components Overview](#components-overview)
 2. [Functional Components](#functional-components)
 3. [Class Components](#class-components)
@@ -17,15 +18,18 @@
 ## Components Overview
 
 ### What are Components?
+
 Components are the building blocks of React applications. They are reusable pieces of code that return JSX (JavaScript XML) to describe what should appear on the screen.
 
 **Key Characteristics:**
+
 - **Reusable**: Write once, use multiple times
 - **Composable**: Combine to build complex UIs
 - **Isolated**: Each component manages its own state and logic
 - **Declarative**: Describe what the UI should look like
 
 ### Component Types
+
 1. **Functional Components** (Modern, Preferred)
 2. **Class Components** (Legacy, but still important to understand)
 
@@ -34,6 +38,7 @@ Components are the building blocks of React applications. They are reusable piec
 ## Functional Components
 
 ### Basic Functional Component
+
 ```jsx
 // Simple functional component
 function Welcome() {
@@ -50,6 +55,7 @@ const Welcome = () => <h1>Hello, World!</h1>;
 ```
 
 ### Component with Props
+
 ```jsx
 function Greeting({ name, age = 25 }) {
   return (
@@ -66,6 +72,7 @@ function Greeting({ name, age = 25 }) {
 ```
 
 ### Functional Component with Hooks
+
 ```jsx
 import React, { useState, useEffect } from 'react';
 
@@ -96,6 +103,7 @@ function UserProfile({ userId }) {
 ## Class Components
 
 ### Basic Class Component
+
 ```jsx
 import React, { Component } from 'react';
 
@@ -107,6 +115,7 @@ class Welcome extends Component {
 ```
 
 ### Class Component with Props and State
+
 ```jsx
 class Counter extends Component {
   constructor(props) {
@@ -137,6 +146,7 @@ class Counter extends Component {
 ```
 
 ### Component Lifecycle Methods
+
 ```jsx
 class UserProfile extends Component {
   constructor(props) {
@@ -184,9 +194,11 @@ class UserProfile extends Component {
 ## Props Deep Dive
 
 ### What are Props?
+
 Props (properties) are read-only data passed from parent to child components. They enable components to be dynamic and reusable.
 
 ### Passing Props
+
 ```jsx
 // Parent Component
 function App() {
@@ -226,6 +238,7 @@ function UserCard({ name, age, hobbies, isOnline }) {
 ```
 
 ### Props Destructuring
+
 ```jsx
 // Object destructuring in parameters
 function ProductCard({ name, price, description, onAddToCart }) {
@@ -249,6 +262,7 @@ function ProductCard(props) {
 ```
 
 ### Default Props
+
 ```jsx
 // Modern approach with default parameters
 function Button({ 
@@ -276,6 +290,7 @@ Button.defaultProps = {
 ```
 
 ### PropTypes Validation
+
 ```jsx
 import PropTypes from 'prop-types';
 
@@ -303,6 +318,7 @@ UserProfile.propTypes = {
 ```
 
 ### Children Prop
+
 ```jsx
 // Card component that wraps other content
 function Card({ children, title, className = '' }) {
@@ -329,6 +345,7 @@ function App() {
 ```
 
 ### Props Drilling Problem
+
 ```jsx
 // Props drilling - passing props through multiple levels
 function App() {
@@ -389,6 +406,7 @@ function Navigation() {
 ## Advanced Component Patterns
 
 ### Higher-Order Components (HOCs)
+
 ```jsx
 // HOC for adding loading functionality
 function withLoading(WrappedComponent) {
@@ -413,6 +431,7 @@ const UserProfileWithLoading = withLoading(UserProfile);
 ```
 
 ### Render Props Pattern
+
 ```jsx
 // Mouse tracker with render props
 function MouseTracker({ render }) {
@@ -458,6 +477,7 @@ function App() {
 ```
 
 ### Compound Components
+
 ```jsx
 // Accordion compound component
 function Accordion({ children, ...props }) {
@@ -512,6 +532,7 @@ function App() {
 ```
 
 ### Lists and Keys
+
 ```jsx
 // Proper key usage for lists
 function TodoList({ todos, onToggle, onDelete }) {
@@ -555,6 +576,7 @@ function TodoItem({ todo, onToggle, onDelete }) {
 ## Best Practices
 
 ### 1. Component Naming and Organization
+
 ```jsx
 // Use PascalCase for component names
 function UserProfile() { /* ... */ }
@@ -578,6 +600,7 @@ src/
 ```
 
 ### 2. Props Best Practices
+
 ```jsx
 // Use object destructuring for props
 function UserCard({ name, email, avatar, isOnline }) {
@@ -599,6 +622,7 @@ function Button({ handler, disabled, type }) {
 ```
 
 ### 3. Component Composition
+
 ```jsx
 // Good: Small, focused components
 function Header() {
@@ -626,6 +650,7 @@ function Navigation() {
 ```
 
 ### 4. State vs Props Guidelines
+
 ```jsx
 // Props: Data passed from parent
 function UserProfile({ user, onEdit }) {
@@ -653,9 +678,11 @@ function UserProfile({ user, onEdit }) {
 ## Practice Questions with Answers
 
 ### Question 1: Basic Component Creation
+
 **Q:** Create a functional component called `ProductCard` that accepts `name`, `price`, and `description` as props and displays them in a card format.
 
 **Answer:**
+
 ```jsx
 function ProductCard({ name, price, description }) {
   return (
@@ -680,9 +707,11 @@ function App() {
 ```
 
 ### Question 2: Default Props and PropTypes
+
 **Q:** Enhance the `ProductCard` component with default props and prop validation.
 
 **Answer:**
+
 ```jsx
 import PropTypes from 'prop-types';
 
@@ -720,9 +749,11 @@ ProductCard.defaultProps = {
 ```
 
 ### Question 3: Component Composition
+
 **Q:** Create a reusable `Modal` component that uses the children prop to display any content.
 
 **Answer:**
+
 ```jsx
 function Modal({ isOpen, onClose, title, children }) {
   if (!isOpen) return null;
@@ -765,9 +796,11 @@ function App() {
 ```
 
 ### Question 4: Lists and Keys
+
 **Q:** Create a `BookList` component that renders a list of books with proper key usage.
 
 **Answer:**
+
 ```jsx
 function BookList({ books, onBookSelect }) {
   if (!books || books.length === 0) {
@@ -821,6 +854,7 @@ function App() {
 
 **Q1: What is the difference between props and state?**
 **Answer:**
+
 - **Props**: Read-only data passed from parent to child components. They are immutable within the receiving component.
 - **State**: Mutable data managed within a component. Changes to state trigger re-renders.
 
@@ -924,6 +958,7 @@ Compound components work together to form a cohesive UI. They provide a flexible
 
 **Q6: How do you optimize component re-renders?**
 **Answer:**
+
 - Use `React.memo()` for functional components
 - Use `useMemo()` and `useCallback()` hooks
 - Split components to isolate state changes
@@ -986,6 +1021,7 @@ function Parent() {
    - Avoid inline objects/functions in props
 
 ### React Component Mental Model
+
 ```
 Props (Input) → Component Logic → JSX (Output)
      ↓              ↓              ↓
@@ -1000,6 +1036,7 @@ Props (Input) → Component Logic → JSX (Output)
 Let's build a comprehensive personal dashboard that demonstrates all the concepts we've covered. This project will include multiple components, props passing, list rendering, and advanced patterns.
 
 The dashboard will feature:
+
 - User profile display
 - Task management
 - Weather widget  
@@ -1007,6 +1044,7 @@ The dashboard will feature:
 - Settings panel
 
 This project demonstrates:
+
 - ✅ Functional components
 - ✅ Props passing and validation
 - ✅ Component composition
