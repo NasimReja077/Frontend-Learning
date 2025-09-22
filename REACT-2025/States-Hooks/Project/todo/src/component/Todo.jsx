@@ -72,14 +72,14 @@ export const Todo = () =>{
     setTask(updateTask);
   }
   return(
-    <section className=''>
-      <header>
-        <h1>Todo List</h1>
+    <section className="bg-white shadow-lg rounded-2xl p-6 w-[400px]">
+      <header className="flex flex-col items-center mb-4">
+        <h1 className="text-2xl font-bold text-indigo-600">Todo List</h1>
         <TodoDatetime />
       </header>
       <TodoForm onAddTodo={handleFromSubmit}/> {/** onAddTodo is event hansler it is child to parent communication */}
-      <section className=''>
-        <ul>
+      <section className="mt-4">
+        <ul className="space-y-2">
           {/* {task.map((curTask, index) =>{ */}
           {task.map((curTask) =>{
             return (
@@ -97,7 +97,11 @@ export const Todo = () =>{
         </ul>
 
       </section>
-      <section className='' onClick={handleClearAllTodoData}>Clear All</section>
+      <section 
+        className="mt-6 text-center cursor-pointer text-sm text-red-500 hover:text-red-700"
+        onClick={handleClearAllTodoData}>
+        Clear All
+      </section>
     </section>
   )
 }

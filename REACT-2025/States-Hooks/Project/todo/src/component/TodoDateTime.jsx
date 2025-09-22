@@ -13,6 +13,6 @@ export const TodoDatetime = () =>{
          return () => clearInterval(interval); // clenup funtion
        },[]);
        return(
-          <h2>{dateTime}</h2>
+          <h2 className="text-sm text-gray-500">{dateTime}</h2>
        )
 }

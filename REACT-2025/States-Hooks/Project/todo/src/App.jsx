@@ -1,7 +1,10 @@
 import { Todo } from "./component/Todo.jsx";
 
 export const App = () => {
-  return <section>{<Todo/>}</section>
+  return  <section className="bg-gray-100 min-h-screen flex justify-center items-center">{
+    <Todo/>
+    }
+    </section>
 };
 
 
