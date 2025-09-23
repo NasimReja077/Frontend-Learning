@@ -4,6 +4,7 @@
 //? Update input fields to use object properties.
 //? Use the spread operator to update the form data state efficiently.
 //? Discuss the benefits of using object state over multiple state variables.
+*/
 
 
 import React, { useState } from 'react'
@@ -52,7 +53,7 @@ export const RegistrationForm2 = () => {
                
                <input 
                type='text' 
-               name='firstName'  //{/* name attribute */}
+               name='firstName'  /* name attribute */
                placeholder='Enter Your FirstName'
                required
                value={user.firstName}

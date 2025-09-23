@@ -1,4 +1,6 @@
 // The Hard Way // not do that way //bade pactice
+
+//* Registration from using multiple state variables
 //? Set up a functional component in React.
 
 //? Create five separate state variables (firstName, lastName, email, password, phoneNumber).
