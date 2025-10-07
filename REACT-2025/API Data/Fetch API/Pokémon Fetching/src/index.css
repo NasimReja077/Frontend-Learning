@@ -223,3 +223,45 @@ pokemon-info {
     cursor: pointer;
   }
 }
+
+
+
+
+
+.controls {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.controls select {
+  padding: 0.8rem 1rem;
+  font-size: 1.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #000;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.load-more button {
+  background-color: #ff4c4c;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.load-more button:hover {
+  background-color: #ff2e2e;
+  transform: scale(1.05);
+}
