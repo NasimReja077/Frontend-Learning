@@ -6,11 +6,11 @@ import { Lodding } from './Loading'
 const AppLayout =()=> {
   const navigation = useNavigation() //useNavigate is defarent //useNavigate is funtion
   console.log(navigation);
-  if (navigation.state === "loading") return <Lodding />
+  if (navigation.state === "loading") return <Lodding /> // Add Global Loading States
   return (
     <>
     <Header />
-    <Outlet/>
+    <Outlet/> {/** for child componen */}
     <Footer />
     </>
   )

@@ -1,3 +1,4 @@
+// Add Global Loader
 export const Lodding = () =>{
      return (
           <div className="container loader-section">
