@@ -1,7 +1,7 @@
 // useNavigate 
 // Returns a function that lets you navigate programmatically in the browser in response to user interactions or effects.
 // It's often better to use redirect in action/loader functions than this hook.
-
+// use useNavigate hook for go back 1 step previous page
 import { useNavigate, useRouteError } from "react-router-dom";
 
 export const ErrorPage = () =>{
@@ -10,8 +10,8 @@ export const ErrorPage = () =>{
      const navigate = useNavigate();
 
      const handleGoBack = () => {
-          navigate(-1); // back to preves page
-          //navigate(/); // back to root page
+          navigate(-1); // back to previous page
+          //navigate(/); // "/" use for back to root page
      };
 
      if(error.status === 404){
