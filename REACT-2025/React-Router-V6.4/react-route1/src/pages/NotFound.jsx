@@ -1,3 +1,4 @@
+// NotFound page
 import { NavLink, useRouteError } from "react-router-dom";
 
 export const NotFound = () => {
