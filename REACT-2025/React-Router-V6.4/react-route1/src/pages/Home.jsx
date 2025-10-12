@@ -3,9 +3,11 @@ import { NavLink } from "react-router-dom";
 export const Home = () => {
   return (
     <main>
+
       <section className="section-hero">
         <div className="container grid grid-two--cols">
           <div className="section-hero--content">
+
             <p className="hero-subheading">
               Explore the Latest in Movie Industries
             </p>
@@ -16,11 +18,13 @@ export const Home = () => {
               Discover the Top Best Movies and Dramas with a catchy subtitle
               like Your Ultimate Guide to Must-Watch Content.
             </p>
+
             <div className="hero-btn">
               <NavLink to="/movies" className="btn">
                 Explore Now
               </NavLink>
             </div>
+
           </div>
           <div className="section-hero-image">
             <img
@@ -31,7 +35,9 @@ export const Home = () => {
               height="150"
             />
           </div>
+
         </div>
+
         <div className="custom-shape-divider-bottom-1696038172">
           <svg
             data-name="Layer 1"
@@ -55,6 +61,7 @@ export const Home = () => {
             ></path>
           </svg>
         </div>
+        
       </section>
     </main>
   );
