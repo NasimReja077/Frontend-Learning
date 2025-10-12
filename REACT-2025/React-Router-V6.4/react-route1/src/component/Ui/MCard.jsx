@@ -1,3 +1,5 @@
+// Movies Card 
+
 import { NavLink } from "react-router-dom";
 
 export const MCard = ({ curMovie }) => {
