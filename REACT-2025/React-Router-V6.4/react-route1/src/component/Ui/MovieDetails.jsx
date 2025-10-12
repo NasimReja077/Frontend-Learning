@@ -5,6 +5,7 @@ export const MoviesDetails = () =>{
      // const params = useParams(); // reatan obj  // no need in v6
      // console.log(params);
      // feach api retan all data use useLoaderData
+     // useLoaderData is funtion
      const movieDatas = useLoaderData();
      console.log(movieDatas);
      const { Actor, Poster, Title, Type, year, plot, boxOffice, imdbID } = movieDatas;
