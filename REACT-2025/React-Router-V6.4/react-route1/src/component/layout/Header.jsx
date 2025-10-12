@@ -20,7 +20,7 @@ export const Header = () => {
         <section className="top_txt">
           <div className="head container">
             <div className="head_txt">
-              <p>Get Thapa Membership, 30-day return or refund guarantee.</p>
+              <p>Get Membership, 30-day Free Membership guarantee.</p>
             </div>
             <div className="sing_in_up">
               <NavLink to="# ">SIGN IN</NavLink>
@@ -32,7 +32,7 @@ export const Header = () => {
         <div className="container">
           <div className="navbar-brand">
             <NavLink to="/">
-              <p>ThapaFlix</p>
+              <p>WoWFlix</p>
             </NavLink>
           </div>
 
