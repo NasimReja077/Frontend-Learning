@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./pages/Home.jsx"
 import { About } from './pages/About.jsx';
 import { Movies } from "./pages/Movies.jsx";
-import { Contact } from "./pages/Contact.jsx";
+import { Contact, contactData } from "./pages/Contact.jsx";
 import AppLayout from './component/layout/AppLayout.jsx';
 import { ErrorPage } from './pages/ErrorPage.jsx';
 import { getMoviesData } from './api/GatApiData.jsx';
@@ -37,7 +37,8 @@ const App = () => {
         },
         {
           path: "/contact",
-          element:<Contact /> 
+          element:<Contact />, 
+          action: contactData, // action is property and contactData is function
         }
         // { // 2nd mathod for error page
         //   path: "*",
