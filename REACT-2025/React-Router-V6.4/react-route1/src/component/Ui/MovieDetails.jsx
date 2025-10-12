@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 import React from 'react'
 import { NavLink, useLoaderData } from 'react-router-dom'
 // import { useParams } from 'react-router-dom'
@@ -22,7 +22,6 @@ export const MoviesDetails = () =>{
     Year,
     Plot,
     BoxOffice,
-    imdbID,
     Awards,
     imdbRating,
   } = movieDatas;
@@ -61,6 +60,12 @@ export const MoviesDetails = () =>{
                   <i className="fas fa-camera-retro"></i>
                 </span>
                 Rating: {imdbRating}
+              </p>
+              <p className="movie__detail">
+                <span className="icons icons-red">
+                  <i className="fas fa-camera-retro"></i>
+                </span>
+                Genre: {Genre}
               </p>
               <p className="movie__detail">
                 <span className="icons icons-grey">
