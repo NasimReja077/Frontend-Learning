@@ -14,8 +14,8 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <AppLayout />,
-      errorElement: <ErrorPage />, // for 404 error page
+      element: <AppLayout />, //Layout
+      errorElement: <ErrorPage />, // for 404 error page //1st step not using path
       children:[
         {
           path: "/",
@@ -28,12 +28,12 @@ const App = () => {
         {
           path: "/movies",
           element:<Movies/>,
-          loader: getMoviesData, // get appi data
+          loader: getMoviesData, // get appi data // Global Loader
         },
         {
-          path: "/movies/:moviesID", // Dynamic Routing
+          path: "/movies/:moviesID", // Dynamic Routing // use ID
           element:<MoviesDetails/>,
-          loader: getMoviesDetails,
+          loader: getMoviesDetails, // Loader
         },
         {
           path: "/contact",
