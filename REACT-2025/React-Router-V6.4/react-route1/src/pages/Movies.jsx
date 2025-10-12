@@ -1,3 +1,4 @@
+// Movies page 
 import React from 'react'
 import { useLoaderData } from 'react-router-dom'
 import { MCard } from '../component/Ui/MCard';
