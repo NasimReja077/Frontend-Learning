@@ -2,7 +2,9 @@
 
 
 //isActive is a core concept in React Router, particularly when working with the <NavLink> component. It is used to determine whether a link is currently active (i.e., its to prop matches the current URL) and allows you to apply conditional styling or rendering based on this active state.
+
 // How isActive works with <NavLink>:
+
 // In React Router v6 and later, the isActive state is accessed through a function passed to the className, style, or children props of the <NavLink> component. This function receives an object containing the isActive boolean value (and isPending for pending navigations).
 
 import { NavLink } from "react-router-dom";
