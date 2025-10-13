@@ -1,9 +1,5 @@
-// Movies Card 
-
-import { NavLink } from "react-router-dom";
-
-export const MCard = ({ curMovie }) => {
-     const { Poster, imdbID } = curMovie;
+export const Card = ({movieData}) =>{
+     const {Poster, imdbID } = movieData;
      return(
           <>
           <li className="hero-container">
