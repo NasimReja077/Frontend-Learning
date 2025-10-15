@@ -6,6 +6,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-section {
+/* section {
   @apply flex flex-col items-center justify-center min-h-screen py-10;
-}
+} */

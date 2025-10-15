@@ -43,6 +43,7 @@ The deleted post instantly disappears from the UI ✅
 
 import React, { useEffect, useState } from 'react'
 import { deletePost, getPost } from '../api/PostApi'
+import { Form } from './Form';
 
 
 export const Posts = () =>{
@@ -63,6 +64,11 @@ export const Posts = () =>{
      // Delete a post by ID
      const handleDeletePost = async (id) => {
           // console.log(res);
+
+          // // 1️⃣ Show confirmation popup
+          // const confirmDelete = window.confirm("Are you sure you want to delete this post?");
+          // if (!confirmDelete) return; // User clicked Cancel, do nothing
+          //  // 2️⃣ If user confirmed, proceed to delete
           try {
                const res = await deletePost(id);
                if(res.status === 200){
@@ -80,32 +86,45 @@ export const Posts = () =>{
      };
      
      return (
-     <section className="w-[90%] max-w-6xl">
-          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-               {data.map((curElem) => {
-                    const { id, body, title } = curElem;
-                    return (
+          <>
 
+          <section className="p-4 bg-gray-950 border-2 border-gray-800 m-3 rounded-2xl"><Form data={data} setData={setData} /></section>
+
+          <section className="w-[90%] max-w-6xl mx-auto mt-6">
+               <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {
+                    data.map((curElem) => {
+                         const { id, body, title } = curElem;
+                         return (
                          <li key={id}
+
                          className="bg-white/10 dark:bg-white/5 backdrop-blur-lg border-white/20 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 text-gray-900 dark:text-gray-100">
+
                               <p className="text-sm text-gray-500 mb-1">Post ID: <span className="font-semibold text-gray-800 dark:text-gray-300">{id}</span></p>
+
                               <h2 className="text-xl font-semibold mb-2">Title: {title}</h2>
+
                               <p className="text-sm mb-3">Body: {body}</p>
+
                               <div className="flex gap-3 mt-4">
+
                                    <button className="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 active:scale-95 transition-all duration-200 cursor-pointer">
                                         Edit
                                    </button>
+
                                    <button className="px-4 py-2 bg-red-500 text-white rounded-xl hover:bg-red-600 active:scale-95 transition-all duration-200 cursor-pointer"
                                    onClick={() => handleDeletePost(id)} // when click the get id for delete
                                    >
                                         Delete
                                    </button>
-                              </div>
 
+                              </div>
                          </li>
                          );
-               })}
-          </ol>
-    </section>
+                         
+                    })}
+               </ol>
+          </section>
+    </>
   )
 }
