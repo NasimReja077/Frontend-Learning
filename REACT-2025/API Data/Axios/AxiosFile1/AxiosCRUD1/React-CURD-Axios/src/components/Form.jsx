@@ -1,11 +1,25 @@
-import { useState } from "react"
-import { postData } from "../api/PostApi";
 
-export const Form = ({ data, setData }) => {
+import { useEffect, useState } from "react"
+import { postData, updateData } from "../api/PostApi";
+
+export const Form = ({ data, setData, updatedDataApi, setUpdatedDataApi }) => {
      const [addData, setAddData] = useState({
           title:"",
           body:""
      })
+
+     let isEmpty = Object.keys(updatedDataApi).length === 0;
+
+     // get the updatae Data and add into input field
+     useEffect(() =>{
+          updatedDataApi && 
+          setAddData({
+               title: updatedDataApi.title || "",
+               body: updatedDataApi.body || "",
+          });
+     }, [updatedDataApi]);
+
+
      const handleInputChange = (e) =>{
           const name = e.target.name;
           const value = e.target.value;
@@ -28,10 +42,38 @@ export const Form = ({ data, setData }) => {
                setAddData({ title: "", body: ""}) // remove old input data
           }
      };
+     // updatePostData
+     const updatePostData = async () =>{
+          try {
+               const res = await updateData (updatedDataApi.id , addData);
+               console.log(res);
+               
+               if(res.status === 200){
+                    setData((prev) =>{
+                         return prev.map((curElem) =>{
+                              return curElem.id === res.data.id ? res.data : curElem;
+                         })
+                    })
 
+                    setAddData({title: "", body: ""});
+                    setUpdatedDataApi({});
+               }
+
+          } catch (error) {
+               console.log(error);
+          }
+     }
+
+     // form submision
      const handleFormSubmit = (e) => {
           e.preventDefault();
-          addPostData()
+          const action = e.nativeEvent.submitter.value;
+          if(action === "Add"){
+               addPostData();
+          }else if(action === "Edit"){
+               updatePostData();
+          }
+          // addPostData()
      }
      return(
           <form onSubmit={handleFormSubmit} className="flex flex-col sm:flex-row items-center justify-center gap-3 p-4 bg-gray-900 rounded-2xl shadow-lg">
@@ -61,8 +103,10 @@ export const Form = ({ data, setData }) => {
                     className="w-full text-gray-800 px-4 py-2 border-2 border-gray-700 rounded-xl outline-none focus:border-amber-400 transition"
                     />
                </div>
-               <button type="submit" 
-               className="bg-amber-500 hover:bg-amber-600 text-white text-lg font-semibold px-6 py-2 rounded-xl shadow-md transition">Add</button>
+               <button
+               className="bg-amber-500 hover:bg-amber-600 text-white text-lg font-semibold px-6 py-2 rounded-xl shadow-md transition" 
+               type="submit" 
+               value={isEmpty ? "Add" : "Edit"}>{isEmpty ? "ADD" : "Edit" }</button>
           </form>
      )
 }

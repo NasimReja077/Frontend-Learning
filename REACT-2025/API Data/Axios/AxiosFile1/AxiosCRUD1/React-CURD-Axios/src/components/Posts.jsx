@@ -49,6 +49,7 @@ import { Form } from './Form';
 export const Posts = () =>{
      // console.log(getPost());
      const [data, setData] = useState([]);
+     const [updatedDataApi, setUpdatedDataApi] = useState({});
 
      const getPostData = async () => {
           const res = await getPost();
@@ -84,11 +85,18 @@ export const Posts = () =>{
                console.error("Error deleting post:", error);
           }
      };
+     const handleUpdatePost = (curElem) => setUpdatedDataApi(curElem);
      
      return (
           <>
 
-          <section className="p-4 bg-gray-950 border-2 border-gray-800 m-3 rounded-2xl"><Form data={data} setData={setData} /></section>
+          <section className="p-4 bg-gray-950 border-2 border-gray-800 m-3 rounded-2xl">
+               <Form 
+                    data={data} 
+                    setData={setData} 
+                    updatedDataApi={updatedDataApi} 
+                    setUpdatedDataApi={setUpdatedDataApi}/>
+          </section>
 
           <section className="w-[90%] max-w-6xl mx-auto mt-6">
                <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -108,7 +116,10 @@ export const Posts = () =>{
 
                               <div className="flex gap-3 mt-4">
 
-                                   <button className="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 active:scale-95 transition-all duration-200 cursor-pointer">
+                                   <button 
+                                   
+                                   onClick={() => handleUpdatePost(curElem)}
+                                   className="px-4 py-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 active:scale-95 transition-all duration-200 cursor-pointer">
                                         Edit
                                    </button>
 
