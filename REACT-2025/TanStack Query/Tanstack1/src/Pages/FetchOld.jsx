@@ -2,22 +2,43 @@ import { useEffect, useState } from "react"
 import { fetchPostsData } from "../Api/Api";
 
 export const FetchOld =()=> {
+  // States for loading, error, and posts data
   const [posts, setPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+
+  // Fetch posts data function
   const getPostsData = async ()=> {
     try {
       const res = await fetchPostsData();
       // console.log(res);
-      res.status === 200 ? setPosts(res.data) : [];
+      // res.status === 200 ? setPosts(res.data) : [];
+      if (res.status === 200){
+        setPosts(res.data); // set the fetched posts data
+        setIsLoading(false); // Turn off loading state
+        setIsError(false);
+      }
       // setPosts
     } catch (error) {
-      console.log(error);
-      return [];
+      console.log("Error fetching posts:", error);
+      setIsError(true); // set error state
+      setIsLoading(false) // Turn off loading state
+      // return [];
     }
   };
 
   useEffect(() =>{
     getPostsData();
   }, []);
+
+  if (isLoading)
+    return <p className="text-center text-blue-500 mt-10 font-black">OLD..Loading...</p>;
+  if (isError)
+    return (
+      <p className="text-center text-red-500 mt-10 font-black">
+        Something went wrong!
+      </p>
+    );
 
   return (
     <div className="container mx-auto px-6 py-10">
