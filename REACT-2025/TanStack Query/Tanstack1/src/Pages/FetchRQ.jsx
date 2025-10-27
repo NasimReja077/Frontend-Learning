@@ -37,7 +37,16 @@ export const FetchRQ =()=> {
     queryKey: ["posts"], // unique key for caching // like useState
     // queryFn: getPostsData, // like useEffect
     queryFn: fetchPostsData, // fetch function
+
+    // gcTime: 1000, // Garbage Collection
+    staleTime: 5000, // How long the fetched data is considered “fresh” before it becomes “stale.”
   });
+  /**
+   * When Garbage Collection Happens
+   * React Query garbage collects queries when:
+   *  The query has no active observers (no components using it)
+      The query’s cacheTime expires
+   */
 
   // Handle API Loading & Errors Easily with React Query
   if (isPending)

@@ -52,8 +52,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MainLayout } from "./component/Layouts/MainLayout";
 import { Home } from "./pages/Home";
 import { FetchOld } from "./pages/FetchOld";
-import { FetchRQ } from "./pages/FetchRQ";
+import { FetchRQ } from "./Pages/FetchRQ";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
 
 const router = createBrowserRouter([
   {
@@ -81,6 +84,9 @@ const App = ()=>{
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router}></RouterProvider>;
+
+      <ReactQueryDevtools initialIsOpen={false} />
+      
     </QueryClientProvider>
   )
 };
