@@ -39,13 +39,26 @@ export const FetchRQ =()=> {
     queryFn: fetchPostsData, // fetch function
 
     // gcTime: 1000, // Garbage Collection
-    staleTime: 5000, // How long the fetched data is considered “fresh” before it becomes “stale.”
+    // staleTime: 5000, // How long the fetched data is considered “fresh” before it becomes “stale.”
+    refetchInterval: 1000, // Polling // Poll every 5 seconds // In React Query, polling is done automatically using the option: refetchInterval
+    refetchIntervalInBackground: true // Keep polling even in background// when do outher then but background automaic data faching 
+
   });
   /**
    * When Garbage Collection Happens
    * React Query garbage collects queries when:
    *  The query has no active observers (no components using it)
       The query’s cacheTime expires
+   */
+  /**
+   * What Is Polling?
+   Polling means automatically refetching data from the server at regular time intervals — without needing any manual user action (like a refresh or button click).
+   
+   It’s useful for live-updating UIs, such as:
+    Real-time dashboards
+    Chat messages
+    Stock price tickers
+    Notifications or activity feeds
    */
 
   // Handle API Loading & Errors Easily with React Query
