@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Global CSS */
+body {
+  @apply bg-gray-50 text-gray-900 font-sans;
+}
+
+/* For active NavLink */
+.active {
+  @apply text-blue-500 font-semibold border-b-2 border-blue-500;
+}
+
+.container {
+  @apply max-w-7xl mx-auto;
+}
