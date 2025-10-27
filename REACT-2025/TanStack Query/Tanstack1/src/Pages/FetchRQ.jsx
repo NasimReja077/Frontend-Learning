@@ -14,6 +14,7 @@ React Query takes care of:
  Background refetching
  Data synchronization
  */
+import { NavLink } from "react-router-dom";
 import { fetchPostsData } from "../Api/Api2";
 import { 
   // useQueries ,
@@ -76,7 +77,7 @@ export const FetchRQ =()=> {
     <div className="container mx-auto px-6 py-10">
 
       <h2 className="text-3xl font-bold text-center text-blue-600 mb-8">
-        📚 Fetched Posts (Old Way)
+        📚 Fetched Posts (NEW Way)
       </h2>
       <ul className="space-y-4">
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -84,6 +85,7 @@ export const FetchRQ =()=> {
             const { id, title, body } = curElem;
             return(
             <li key={id} className="bg-white rounded-2xl shadow-lg p-5 border border-gray-100 hover:shadow-xl transition-transform transform hover:-translate-y-1">
+              <NavLink to={`/rq/${id}`}>
               <h2 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
                 {title}
               </h2>
@@ -91,6 +93,7 @@ export const FetchRQ =()=> {
               <div className="mt-4 flex justify-between items-center">
                 <span className="text-xs text-gray-400">ID: {id}</span>
               </div>
+              </NavLink>
             </li>
           );
         })}
