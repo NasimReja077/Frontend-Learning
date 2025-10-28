@@ -40,3 +40,9 @@ export const fetchInvPost = async (id) =>{
      }
 }
 
+
+// to delete the post
+
+export const deletPost = (id) =>{
+     return api.delete(`/posts/${id}`);
+};

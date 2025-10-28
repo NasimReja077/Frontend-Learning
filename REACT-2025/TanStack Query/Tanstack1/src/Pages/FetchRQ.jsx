@@ -15,15 +15,19 @@ React Query takes care of:
  Data synchronization
  */
 import { NavLink } from "react-router-dom";
-import { fetchPostsData } from "../Api/Api2";
+import { deletPost, fetchPostsData } from "../Api/Api2";
 import { 
   keepPreviousData,
+  useMutation,
   // useQueries ,
-  useQuery } from "@tanstack/react-query";
+  useQuery, 
+  useQueryClient} from "@tanstack/react-query";
 import { useState } from "react";
 export const FetchRQ =()=> {
 
   const [pageNumber, setPageNumber] = useState(0);
+
+  const queryClient = useQueryClient();
 
   // const getPostsData = async ()=> {
   //   try {
@@ -51,6 +55,7 @@ export const FetchRQ =()=> {
     // refetchIntervalInBackground: true // Keep polling even in background// when do outher then but background automaic data faching 
 
   });
+
   /**
    * When Garbage Collection Happens
    * React Query garbage collects queries when:
@@ -67,6 +72,17 @@ export const FetchRQ =()=> {
     Stock price tickers
     Notifications or activity feeds
    */
+
+    // Mutation funtion to delete the post
+    const deleteMutation = useMutation({
+      mutationFn:(id) => deletPost(id),
+      onSuccess: (data, id) => {
+        // console.log(data, id);
+        queryClient.setQueryData(["posts", pageNumber], (curElem) =>{
+          return curElem?.filter((post) => post.id !== id);
+        });
+      },
+    });
 
   // Handle API Loading & Errors Easily with React Query
   if (isPending)
@@ -100,6 +116,7 @@ export const FetchRQ =()=> {
                 <span className="text-xs text-gray-400">ID: {id}</span>
               </div>
               </NavLink>
+              <button onClick={() => deleteMutation.mutate(id)} className="mt-3 px-4 py-2 rounded-lg font-semibold bg-green-400 text-white hover:bg-green-700 transition-all duration-200 shadow-md">Delete</button>
             </li>
           );
         })}
