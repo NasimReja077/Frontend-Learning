@@ -15,7 +15,7 @@ React Query takes care of:
  Data synchronization
  */
 import { NavLink } from "react-router-dom";
-import { deletPost, fetchPostsData } from "../Api/Api2";
+import { deletPost, fetchPostsData, updatePost } from "../Api/Api2";
 import { 
   keepPreviousData,
   useMutation,
@@ -84,6 +84,17 @@ export const FetchRQ =()=> {
       },
     });
 
+    const updateMutation = useMutation({
+      mutationFn:(id) => updatePost(id),
+      onSuccess: (apiData, postId) => {
+        queryClient.setQueryData(["posts", pageNumber], (postsData) =>{
+          return postsData?.map((curPost) => {
+            return curPost.id === postId ? {...curPost, title:apiData.data.title} : curPost;
+          });
+        });
+      },
+    });
+
   // Handle API Loading & Errors Easily with React Query
   if (isPending)
     return <p className="text-center text-blue-500 mt-10 font-black">NEW..Loading...</p>;
@@ -117,6 +128,7 @@ export const FetchRQ =()=> {
               </div>
               </NavLink>
               <button onClick={() => deleteMutation.mutate(id)} className="mt-3 px-4 py-2 rounded-lg font-semibold bg-green-400 text-white hover:bg-green-700 transition-all duration-200 shadow-md">Delete</button>
+              <button onClick={() => updateMutation.mutate(id)} className="mt-3 px-4 py-2 rounded-lg font-semibold bg-green-400 text-white hover:bg-green-700 transition-all duration-200 shadow-md">Update</button>
             </li>
           );
         })}

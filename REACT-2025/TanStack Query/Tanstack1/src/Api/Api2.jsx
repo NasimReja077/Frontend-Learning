@@ -46,3 +46,8 @@ export const fetchInvPost = async (id) =>{
 export const deletPost = (id) =>{
      return api.delete(`/posts/${id}`);
 };
+
+// to update the post
+export const updatePost = (id) =>{
+     return api.patch(`/posts/${id}`, { title: "I have updated"});
+}
