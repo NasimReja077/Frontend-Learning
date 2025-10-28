@@ -18,9 +18,10 @@ const api = axios.create({
 //      return res.status === 200 ? res.data : [];
 // };
 
-export const fetchPostsData = async () =>{
+export const fetchPostsData = async (pageNumber) =>{ // pageNumber is parameter 
      try {
-          const res = await api.get("/posts?_start=0&_limit=32");
+          // const res = await api.get("/posts?_start=0&_limit=32");
+          const res = await api.get(`/posts?_start=${pageNumber}&_limit=3`); // dynamic pagination
           return res.status === 200 ? res.data : [];
      } catch (error) {
           console.log(error);

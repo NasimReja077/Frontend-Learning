@@ -17,9 +17,13 @@ React Query takes care of:
 import { NavLink } from "react-router-dom";
 import { fetchPostsData } from "../Api/Api2";
 import { 
+  keepPreviousData,
   // useQueries ,
   useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 export const FetchRQ =()=> {
+
+  const [pageNumber, setPageNumber] = useState(0);
 
   // const getPostsData = async ()=> {
   //   try {
@@ -35,14 +39,16 @@ export const FetchRQ =()=> {
   // const { data, isLoading, isError, error } = useQuery({
   const { data, isPending, isError, error } = useQuery({ // React Query's hook provides isLoading/isFetching/isError/etc.
     //React Query Hook
-    queryKey: ["posts"], // unique key for caching // like useState
+    queryKey: ["posts", pageNumber], // unique key for caching // like useState
     // queryFn: getPostsData, // like useEffect
-    queryFn: fetchPostsData, // fetch function
+    // queryFn: fetchPostsData, // fetch function
+    queryFn: ()=>fetchPostsData(pageNumber), // fetch function // pageNumber is argument
+    placeholderData: keepPreviousData, // not loding 
 
     // gcTime: 1000, // Garbage Collection
     // staleTime: 5000, // How long the fetched data is considered “fresh” before it becomes “stale.”
-    refetchInterval: 1000, // Polling // Poll every 5 seconds // In React Query, polling is done automatically using the option: refetchInterval
-    refetchIntervalInBackground: true // Keep polling even in background// when do outher then but background automaic data faching 
+    // refetchInterval: 1000, // Polling // Poll every 5 seconds // In React Query, polling is done automatically using the option: refetchInterval
+    // refetchIntervalInBackground: true // Keep polling even in background// when do outher then but background automaic data faching 
 
   });
   /**
@@ -99,6 +105,25 @@ export const FetchRQ =()=> {
         })}
         </div>
       </ul>
+      {/*Pagination Section */}
+      <div className="flex justify-center items-center gap-4 mt-10">
+        <button 
+        disabled={pageNumber === 0 ? true : false} 
+        onClick={() => setPageNumber((prev) => prev - 3)}
+        className={`px-4 py-2 rounded-lg font-semibold transition-all duration-200 ${
+            pageNumber === 0
+              ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+              : "bg-blue-600 text-white hover:bg-blue-700 shadow-md"
+          }`}
+        >Prev</button>
+        <p className="text-lg font-semibold text-gray-700">
+          Page <span className="text-blue-600">{pageNumber / 3 + 1}</span>
+        </p>
+        <button 
+        onClick={() => setPageNumber((prev) => prev + 3)}
+        className="px-4 py-2 rounded-lg font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-all duration-200 shadow-md"
+        >Next</button>
+      </div>
     </div>
   )
 }
