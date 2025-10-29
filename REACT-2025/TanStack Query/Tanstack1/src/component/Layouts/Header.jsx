@@ -17,6 +17,7 @@ const Header =()=> {
           <li><NavLink to="/" className={getNavLinkClass}>Home</NavLink></li>
           <li><NavLink to="/trad" className={getNavLinkClass}>FetchOld</NavLink></li>
           <li><NavLink to="/rq" className={getNavLinkClass}>FetchQuery</NavLink></li>
+          <li><NavLink to="/doomscrolling" className={getNavLinkClass}>Scrolling</NavLink></li>
         </ul>
       </div>
     </header>
