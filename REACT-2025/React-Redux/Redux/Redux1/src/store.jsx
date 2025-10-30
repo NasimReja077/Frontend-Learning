@@ -1,9 +1,12 @@
 /* eslint-disable no-case-declarations */
 // Create Reducer Functions to Add & delete
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "@redux-devtools/extension";
+import {thunk} from 'redux-thunk';
+
 const Add_Task = "task/add";
-const Delete_Task = "task/delete"
+const Delete_Task = "task/delete";
+const Fetch_Task = "task/fetch";
 const initialState = {
      // task=[] not use when use obj
      task: [], // key valu paer
@@ -26,6 +29,11 @@ const taskReducer = (state = initialState, action) =>{
                     ...state,
                     task: updatedTask,
                };
+          case Fetch_Task:
+               return {
+                    ...state,
+                    task: [...state.task, ...action.payload],
+               };
                default:
                     return state;
      }
@@ -33,7 +41,7 @@ const taskReducer = (state = initialState, action) =>{
 
 // Redux Store: Create, Dispatch & Get State in React
 // Step 2: Create the Redux store using the reducer
-export const store = createStore(taskReducer, composeWithDevTools());
+export const store = createStore(taskReducer, composeWithDevTools(applyMiddleware(thunk)));
 console.log(store);
 
 // Step 3: Log the initial state
@@ -66,5 +74,19 @@ console.log("updated State: ", store.getState());
 store.dispatch(deleteTasks(1));
 console.log("deleted State: ", store.getState());
 
-
+// Redux Thunk in React: Fetch and Add API Data
+export const fetchTask = () => {
+     return async (dispatch) => {
+          try {
+               const res = await fetch(
+                    "https://jsonplaceholder.typicode.com/todos?_limit=5"
+               );
+               const task = await res.json();
+               dispatch({ type: Fetch_Task, payload: task.map((curTask) => curTask.title),
+               });
+          } catch (error) {
+               console.log(error);
+          }
+     }
+}
 
