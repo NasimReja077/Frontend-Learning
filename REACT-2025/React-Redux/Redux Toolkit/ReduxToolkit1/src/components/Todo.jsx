@@ -1,8 +1,25 @@
+import { useState } from "react";
 import { MdDeleteForever } from "react-icons/md";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addTasks, deleteTasks } from "../features/tasks/taskSlice";
 
 export const Todo = () => {  
-     const tasks = useSelector((state) => state.taskReducer));
+     const [userTask, setUserTask] = useState("");
+     const tasks = useSelector((state) => state.taskReducer.task);
+
+     const dispatch = useDispatch();
+
+     // handle Form Submit
+          const handleFormSubmit = (e) => {
+               e.preventDefault();
+               dispatch(addTasks(userTask));
+               setUserTask("");
+          };
+     
+          // handle Task Delete
+          const handleTaskDelete = (index) =>{
+               dispatch(deleteTasks(index));
+          };
 
      return (
           <div className="container flex item-center bg-pink-500">
@@ -10,11 +27,12 @@ export const Todo = () => {
                     <h1>ToDo-List</h1>
                     <div>
                          <form onSubmit={handleFormSubmit}>
-                              <input type="text" id="input-box" placeholder="Add a new Task" value={task} onChange={(e) => setTask(e.target.value)}/>
+                              <input type="text" id="input-box" placeholder="Add a new Task" value={userTask} onChange={(e) => setUserTask(e.target.value)}/>
                               <button>Add Task</button>
                          </form>
                     </div>
-                    {/* <button onClick={handleFetchTasks}>Fetch Tasks</button> */}
+                   
+
                     <ul>
                          {tasks?.map((curTask, index) => {
                               return (
