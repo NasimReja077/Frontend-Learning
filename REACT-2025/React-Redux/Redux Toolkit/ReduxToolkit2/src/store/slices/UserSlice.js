@@ -1,26 +1,26 @@
+/* eslint-disable no-unused-vars */
 //The basic structure of a Redux Toolkit (RTK) slice created using the createSlice function. 
 //It defines the logic for managing a part of application's global state related to users.
 
 import { createSlice } from "@reduxjs/toolkit"; // used to define the slice.
 
-export const UserSlices = createSlice({
+const UserSlices = createSlice({
      name: "user",
      initialState: [],                   //array
      reducers: {                        //big reduce
           //action creator
-          addUser(state,acton){ 
+          addUser(state, acton){ 
                //micro reducer
 
           },
-          removeUser(state,acton){
-
-          },
-          deleteUsers(state,acton){
-
-          }
-     }
+          removeUser(state, acton){},
+          deleteUsers(state, acton){},
+     },
 })
 
+// console.log(UserSlices.actions);
+
+export default UserSlices.reducer;
 
 /**
  * UserSlices: This is the variable that holds the return value of createSlice(). It contains the generated reducer function and the action creators.
