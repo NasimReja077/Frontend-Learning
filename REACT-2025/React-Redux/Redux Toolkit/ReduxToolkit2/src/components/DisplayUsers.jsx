@@ -22,10 +22,11 @@ export const DisplayUsers =()=> {
     <>
     {
      data.map((user, id) =>{
-          return <li key={id}>
-               {user}
-               <button onClick={() => deleteUser(id)}>
-                    <MdDeleteForever/>
+          return <li key={id} className="flex items-center justify-between px-4 py-3 bg-amber-200 rounded-md shadow-sm hover:shadow-md transition">
+               <p className="font-medium text-gray-800">{user}</p>
+               
+               <button className="p-2 rounded-md hover:bg-red-50 focus:ring-2 focus:ring-red-200 text-red-600" onClick={() => deleteUser(id)}>
+                    <MdDeleteForever className="text-2xl"/>
                </button>
           </li>
      })
