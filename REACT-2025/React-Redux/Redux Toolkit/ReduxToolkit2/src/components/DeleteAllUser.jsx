@@ -1,9 +1,7 @@
 import React from 'react'
 
-function DeleteAllUser() {
+export const DeleteAllUser =()=> {
   return (
     <div>DeleteAllUser</div>
   )
 }
-
-export default DeleteAllUser

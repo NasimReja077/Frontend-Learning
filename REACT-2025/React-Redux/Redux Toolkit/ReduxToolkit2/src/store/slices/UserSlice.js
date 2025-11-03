@@ -11,16 +11,24 @@ const UserSlices = createSlice({
           //action creator
           addUser(state, acton){ 
                //micro reducer
-
+               state.push(acton.payload); // in stata data update
+               // console.log(acton.payload); 
           },
-          removeUser(state, acton){},
+          removeUser(state, acton){
+               // console.log("hi" + acton.payload)
+               // state.pop(acton.payload)
+               // let userIndexNum = state.indexOf(acton.payload)
+               // state.splice(userIndexNum, 1)
+               state.splice(acton.payload, 1)
+          },
           deleteUsers(state, acton){},
      },
 })
 
-// console.log(UserSlices.actions);
+// console.log(UserSlices.actions); // give action creator 
 
 export default UserSlices.reducer;
+export const {addUser, removeUser} = UserSlices.actions; // get
 
 /**
  * UserSlices: This is the variable that holds the return value of createSlice(). It contains the generated reducer function and the action creators.
@@ -48,3 +56,13 @@ Crucial RTK Feature: Inside these reducers, you can write "mutating" logic (e.g.
 // Reducer receives:
 // Current state, Dispatched action
 // Then it returns a new state (not modify the old one).
+
+
+// The indexOf() method in JavaScript is used to find the first occurrence of a specified value within a string or an array. It returns the index (position) of the first match, or -1 if the value is not found. 
+// For Strings:
+// The String.prototype.indexOf() method searches for a substring within a string.
+// JavaScript
+
+// const str = "Hello World";
+// const index = str.indexOf("World"); // Returns 6
+// const notFoundIndex = str.indexOf("JavaScript"); // Returns -1
