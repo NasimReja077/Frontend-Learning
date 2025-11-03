@@ -1,9 +1,8 @@
-/* eslint-disable no-unused-vars */
 //The basic structure of a Redux Toolkit (RTK) slice created using the createSlice function. 
 //It defines the logic for managing a part of application's global state related to users.
 
 import { createSlice } from "@reduxjs/toolkit"; // used to define the slice.
-
+import { clearAllUser } from "../actions";
 const UserSlices = createSlice({
      name: "user",
      initialState: [],                   //array
@@ -21,18 +20,28 @@ const UserSlices = createSlice({
                // state.splice(userIndexNum, 1)
                state.splice(acton.payload, 1)
           },
-          clearAllUser(state, acton){
-               // return state = [] // assign empty array // but all clear
-               return []
-          },
+          // clearAllUser(state, acton){
+          //      // return state = [] // assign empty array // but all clear
+          //      return []
+          // },
      },
+
+     extraReducers(builder){
+          // builder.addCase(UserSlices.actions.clearAllUser, 
+          builder.addCase(clearAllUser, () => {
+               return [];
+          })
+     }
+     // If action is supposed to be handled by one reducer, use reducers.
+
+// If action is supposed to be handled by multiple reducers, use extraReducers.
 })
 
 // console.log(UserSlices.actions); // give action creator 
 
 export default UserSlices.reducer;
-export const {addUser, removeUser, clearAllUser} = UserSlices.actions; // get
-
+// export const {addUser, removeUser, clearAllUser} = UserSlices.actions; // get
+export const {addUser, removeUser} = UserSlices.actions;
 /**
  * UserSlices: This is the variable that holds the return value of createSlice(). It contains the generated reducer function and the action creators.
  
