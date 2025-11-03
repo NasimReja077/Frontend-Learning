@@ -21,14 +21,17 @@ const UserSlices = createSlice({
                // state.splice(userIndexNum, 1)
                state.splice(acton.payload, 1)
           },
-          deleteUsers(state, acton){},
+          clearAllUser(state, acton){
+               // return state = [] // assign empty array // but all clear
+               return []
+          },
      },
 })
 
 // console.log(UserSlices.actions); // give action creator 
 
 export default UserSlices.reducer;
-export const {addUser, removeUser} = UserSlices.actions; // get
+export const {addUser, removeUser, clearAllUser} = UserSlices.actions; // get
 
 /**
  * UserSlices: This is the variable that holds the return value of createSlice(). It contains the generated reducer function and the action creators.
