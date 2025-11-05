@@ -1,0 +1,101 @@
+CREATE STORE,
+store
+configureStore,
+createStore(),
+Slice,
+createSlice
+Action
+ACTION TYPE,
+ACTION CREATORS,
+createAction
+REDUCERS,
+COMBINE REDUCERS,
+combineReducers(),
+extraReducers,
+dispatch,
+useDispatch,
+getState
+useSelector,
+Selectors
+Slices,type,acton,state,payload
+Provider,
+initialState,
+Middleware
+applyMiddleware,
+Async Action Creator (Thunk)
+,logger,thunk,
+export const { addTasks, deleteTasks } = taskReducer.actions;
+export default taskReducer.reducer;,
+Making API Call in Redux -> 3 type
+Fetch Data using Redux Thunk 
+Make Your Own Redux
+Creating Multiple Reducers
+combineReducers in Redux 
+Create Your Own combineReducers Function,
+Create Your Own React Redux Library
+Immer in Redux
+RTK Qure
+
+
+
+
+
+
+
+const Add_Task = "task/add";
+const Delete_Task = "task/delete";
+const Fetch_Task = "task/fetch";,
+// Redux Store: Create, Dispatch & Get State in React
+// Step 2: Create the Redux store using the reducer
+export const store = createStore(taskReducer, composeWithDevTools(applyMiddleware(thunk)));
+console.log(store);
+------------------
+RTK
+const taskReducer = createSlice({
+     name: "task",
+     initialState,
+     reducers: 
+
+     ,
+
+
+
+
+console.log(store.dispatch(addTasks("Buy Pan")));
+console.log(store.dispatch(deleteTasks(1)));
+console.log(store.getState());
+
+
+
+
+const UserSlices = createSlice({
+     name: "user",
+     initialState: [],                   //array
+     reducers: {                        //big reduce
+          //action creator
+, extraReducers,
+
+// Create Store
+const store = configureStore({
+     // Root reducers // combine reducers
+     reducer: {
+          users: userSlice, // The 'users' key holds the state managed by UserSlice.js 
+          // [ /* array of user objects from initialState */ ]
+     },
+});
+
+export default store;
+
+, 
+,
+Making API Call in Redux -> 1 custom api Middleware, 2. thunk 3. rtk Qur
+
+https://jsonfakery.com/blogs
+
+Selectors
+Fetch Data using Redux Thunk 
+
+
+https://www.geeksforgeeks.org/reactjs/redux-toolkit/
+
+https://www.geeksforgeeks.org/web-tech/introduction-to-react-redux/
