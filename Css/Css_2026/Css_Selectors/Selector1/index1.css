@@ -1,0 +1,119 @@
+/* Universal Selector */
+*{
+     margin: 0;
+     padding: 0;
+     font-family: Arial, Helvetica, sans-serif;
+     box-sizing: border-box;
+     border-radius: 5px;
+}
+
+/* Universal Selector */
+body {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* Element Selector */
+h1 {
+     color: #333;
+     text-align: center;
+     margin-bottom: 20px;
+}
+
+/* Element Selector */
+p{
+     color: #042b4b;
+     font-size: 18px;
+     margin: 10px 0;
+}
+
+/* Class Selector */
+
+.highlight{
+     background-color: cornflowerblue;
+     color: tomato;
+     padding: 5px;
+}
+
+/* ID Selector */
+#special {
+    color: white;
+    background: green;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Group Selector */ 
+h3, h4 {
+     padding: 8px;
+     color: purple;
+     text-decoration: underline;
+}
+
+/* Attribute Selector */
+
+input[type="text"]{
+     border: 2px solid yellow;
+}
+
+input[type="password"]{
+     border: 2px solid pink;
+}
+
+/* Descendant Selector */
+.box p {
+    background-color: lightblue;
+    padding: 10px;
+}
+
+/* Child Selector */
+.parent > p{
+     background-color: lightgreen;
+     padding: 10px;
+}
+
+/*Adjacent Sibling Selector */
+h2 + p {
+     font-size: 18px;
+     color: darkred;
+     margin-bottom: 15px;
+     font-weight: bold;
+     background-color: lightgray;
+}
+
+/* General Sibling Selector ( ~ ) */
+h2 ~ p {
+     background-color: lightyellow;
+     padding: 10px;
+     border-left: 4px solid red;
+}
+
+/* Attribute Contains Selector ( *= )*/
+/* Selects href containing "page"*/
+
+a[href*="page"]{
+     color: orange;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     font-size: medium;
+     font-weight: 500;
+}
+
+/* Attribute Starts With Selector ( ^= )    */
+/* Selects href starting with https://example.com/a */
+a[href^="https://example.com/a"]{
+     text-decoration: underline;
+     background-color: #333;
+     color: teal;
+     font-size: large;
+     font-weight: 600;
+}
+
+/* Attribute Ends With Selector ( $= )      */
+/* Selects href ending with .png or .html   */
+a[href$=".png"], a[href$=".html"]{
+     color: brown;
+     font-style: italic;
+     font-weight: bolder;
+
+}
+

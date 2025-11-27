@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic CSS Selectors Project</title>
+    <link rel="stylesheet" href="index1.css">
+</head>
+<body>
+
+    <h1>CSS Basic Selectors Project</h1>
+
+    <!-- Element Selector -->
+    <p>This paragraph is styled using the Element Selector.</p>
+
+    <!-- Class Selector -->
+    <h2 class="highlight">This heading uses the Class Selector (.highlight)</h2>
+
+    <!-- ID Selector -->
+    <p id="special">This paragraph uses ID Selector (#special)</p>
+
+    <!-- Group Selector -->
+    <h3>Group Selector Example</h3>
+    <h4>Both H3 and H4 are styled together</h4>
+
+    <!-- Attribute Selector -->
+    <input type="text" placeholder="Enter your name">
+    <input type="password" placeholder="Enter password">
+
+    <!-- Descendant Selector -->
+    <div class="box">
+        <p>This paragraph is inside .box div (Descendant Selector)</p>
+    </div>
+
+    <!-- Child Selector -->
+    <div class="parent">
+        <p>This is a direct child of .parent (Child selector)</p>
+        <span>
+            <p>This will NOT be selected by child selector</p>
+        </span>
+    </div>
+
+    <!-- Adjacent Sibling Selector -->
+     <h2>Adjacent Sibling Example</h2>
+     <p class="first-para">This paragraph comes immediately after H2 (Adjacent + Selector)</p>
+     <p>This paragraph will NOT be selected by + selector</p>
+     <!-- General Sibling Selector -->
+     <h2>General Sibling Example</h2>
+     <p>This paragraph is a general sibling of H2 ( ~ Selector )</p>
+     <p>Another paragraph that is also selected by ~</p>
+
+     <!-- Attribute Selectors (Contains, Starts With, Ends With) -->
+     <div class="attr-section">
+          <a href="https://example.com/home-page">Home Link</a>
+          <a href="https://example.com/about-us">About Us</a>
+          <a href="https://example.com/contact.html">Contact Page</a>
+          <a href="https://example.com/my-link-page">MY-Link</a>
+          <a href="https://example.com/files/image.png">Image File</a>
+     </div>
+
+</body>
+</html>
