@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Selectors Project</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Advanced CSS Selectors Demo</h1>
+        <p class="subtitle">Master :is(), :where(), :has(), :root and more</p>
+    </header>
+
+    <!-- Theme Switcher -->
+    <section class="theme-section">
+        <button class="theme-btn" data-theme="light">Light</button>
+        <button class="theme-btn danger" data-theme="dark">Dark</button>
+        <button class="theme-btn" data-theme="blue">Blue</button>
+    </section>
+
+    <!-- Cards -->
+    <section class="card-section">
+        <div class="card">
+            <h2>Card One</h2>
+            <p>This card contains an image.</p>
+            <img src="https://placehold.co/80" alt="">
+        </div>
+
+        <div class="card">
+            <h2>Card Two</h2>
+            <p>This card has no image.</p>
+        </div>
+
+        <div class="card empty-card">
+            <p></p> <!-- Empty element -->
+        </div>
+    </section>
+
+    <!-- Table -->
+    <section class="table-section">
+        <h2>User Table</h2>
+        <table>
+            <tr><th>ID</th><th>Name</th><th>Role</th></tr>
+            <tr><td>1</td><td>Nasim</td><td>Admin</td></tr>
+            <tr><td>2</td><td>Reja</td><td>User</td></tr>
+            <tr><td>3</td><td>Mondal</td><td>Manager</td></tr>
+            <tr><td>4</td><td>Ali</td><td>Admin</td></tr>
+        </table>
+    </section>
+
+    <!-- Form -->
+    <section class="form-section">
+        <h2>Signup Form</h2>
+
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password" required>
+            <input type="text" placeholder="This input is empty →" id="empty-check">
+
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <h2>Blog Section</h2>
+
+        <div class="blog">
+            <h3>Blog Post 1</h3>
+            <p class="short">Short paragraph.</p>
+            <p class="long">This is a long paragraph with more detailed content to demonstrate first-child and last-child selection.</p>
+        </div>
+
+        <div class="blog">
+            <h3>Blog Post 2</h3>
+            <p>First paragraph only.</p>
+        </div>
+    </section>
+
+</body>
+</html>
+

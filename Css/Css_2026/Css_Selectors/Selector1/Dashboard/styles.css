@@ -1,0 +1,209 @@
+/* ----------------------------------------------
+   1. Global Variables (:root)
+---------------------------------------------- */
+:root {
+    --primary: #4a59ff;
+    --danger: #ff3e3e;
+    --bg: #fafafa;
+    --radius: 10px;
+}
+
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 20px;
+    background: var(--bg);
+}
+
+/* ----------------------------------------------
+   2. Universal Styling with :where() (Zero Specificity)
+---------------------------------------------- */
+:where(h1, h2, h3, p) {
+    margin: 10px 0;
+     color: #792ca0;
+}
+
+/* ----------------------------------------------
+   3. Theme Button Styling Except Danger using :not()
+---------------------------------------------- */
+.theme-btn:not(.danger) {
+    background: var(--primary);
+    color: white;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+}
+
+/* Danger button */
+.theme-btn.danger {
+    background: var(--danger);
+    color: white;
+}
+.theme-btn.danger:hover {
+    background: darkred;
+    cursor:not-allowed;
+}
+.theme-btn:hover {
+    background: darkblue;
+    cursor: pointer;
+}
+
+/* ----------------------------------------------
+   4. Cards Using :has() to detect images
+---------------------------------------------- */
+.card {
+    padding: 20px;
+    border: 2px dotted #ddd;
+    border-radius: var(--radius);
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.card:has(img) {
+    border-color: var(--primary);
+    background: #e6e9ff;
+    cursor: pointer;
+}
+
+/* Empty Element Detection */
+.empty-card p:empty {
+    background: yellow;
+    height: 20px;
+    padding: 10px;
+    border: 3px dashed red;
+}
+/* ----------------------------------------------
+   5. Table Highlight Even Rows
+---------------------------------------------- */
+table tr:nth-child(even) {
+    background-color: #9934cba7;
+    text-align: center;
+    margin: 5px;
+}
+/* Specific columns */
+table td:first-child {
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    padding: 5px;
+    border: 1px solid #ccc;
+    
+}
+
+/* ----------------------------------------------
+   6. Form Styling
+---------------------------------------------- */
+form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    border: 1px solid #a58e8e;
+    font-weight: bolder;
+}
+
+/* Empty input */
+input:placeholder-shown {
+    border-color: orange;
+}
+
+/* Required field */
+input:required {
+    border-left: 4px solid var(--danger);
+}
+
+/* Valid Email */
+input:valid {
+    border-color: var(--primary);
+}
+
+/* Invalid Email */
+input:invalid {
+    border-color: var(--danger);
+}
+
+/* Button that appears red if next input is empty */
+button:has(+ #empty-check:placeholder-shown){
+     background: orange;
+     cursor: not-allowed;
+}
+
+/* ----------------------------------------------
+   7. Blog Section Selectors
+---------------------------------------------- */
+
+/* Select first paragraph inside any blog post */
+.blog p:first-of-type {
+    font-weight: bold;
+    background-color: #a58e8e;
+}
+/* Select last paragraph */
+.blog p:last-of-type {
+    color: #555;
+}
+.blog h3:first-child{
+     text-decoration: underline;
+     font-style: italic;
+}
+
+/* Using :is() for clean selectors */
+.blog :is(h3, p) {
+    padding-left: 5px;
+    border-left: 5px solid #e70c29;
+}
+
+/* Select only in paragraph only first letter */
+.blog p::first-letter {
+    font-size: 200%;
+    color: var(--primary);
+    font-weight: bold;
+}
+/* Select only in paragraph only last letter */
+.blog p::last-letter {
+    font-size: 150%;
+    color: var(--danger);
+    font-weight: bold;
+}
+
+/* ----------------------------------------------
+   8. Attribute Selectors
+---------------------------------------------- */
+img[src*="placehold"] {
+    border-radius: 50%;
+}
+
+button[data-theme="blue"] {
+    background: #d5f448;
+}
+
+
+/* ----------------------------------------------
+   9. Sibling Selectors (+ and ~)
+---------------------------------------------- */
+
+/* First <p> immediately after <h3> */
+h3 + p {
+    color: rgb(26, 186, 18);
+}
+
+/* All following siblings */
+h3 ~ p {
+    font-size: 30px;
+}
+/* Button followed by input */
+button + input {
+    margin-top: 20px;
+    border: 2px solid var(--primary);
+}
+
+/* ----------------------------------------------
+   10. Pseudo Elements
+---------------------------------------------- */
+h1::after {
+    content: " ⚡";
+}
+
+.submit-btn::before {
+    content: "🚀 ";
+}

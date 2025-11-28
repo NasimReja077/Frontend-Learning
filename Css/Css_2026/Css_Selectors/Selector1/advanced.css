@@ -1,0 +1,157 @@
+/* ===========================
+   1. ROOT VARIABLES
+=========================== */
+
+:root {
+    --primary: #4a5cff;
+    --danger: #ff3b3b;
+    --bg: #f0f0f0;
+    --radius: 6px;
+    --text: #222;
+}
+
+/* ===========================
+   2. GLOBAL STYLES
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text);
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+
+h1 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+section {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    background-color: #4a5cff20;
+}
+
+/* ===========================
+   2. Buttons - using :not()
+=========================== */
+.btn:not(.danger) {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+.danger {
+    background: var(--danger);
+    color: white;
+    padding: 10px 18px;
+    border-radius: var(--radius);
+}
+/* ===========================
+   3. ADVANCED SELECTORS
+=========================== */
+
+/* Attribute Selector */
+input[type="text"] {
+    border: 2px solid var(--primary);
+    padding: 8px;
+    border-radius: var(--radius);
+    width: 200px;
+}
+
+
+/* ===========================
+   3. Table - Even Rows Highlight
+=========================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: yellow;
+}
+
+table tr:nth-child(even) {
+    background-color: #c09595;
+}
+
+table td {
+    padding: 10px;
+    border: 5px solid #ccc;
+}
+
+
+/* ===========================
+   4. First Paragraph in a Div
+=========================== */
+
+.text-box > p:first-of-type {
+    color: var(--primary);
+    font-weight: bold;
+    background: #e7eaff;
+    padding: 8px;
+}
+
+/* ===========================
+   5. Input Empty - placeholder-shown
+=========================== */
+
+input:placeholder-shown{
+    border: 2px dashed #aaa;
+    padding: 10px;
+    width: 250px;
+    background: #fafafa;
+}
+
+input:not(:placeholder-shown) {
+    border: 2px solid var(--primary);
+}
+
+
+/* ===========================
+   6. :has() Selector
+=========================== */
+.card {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+}
+
+/* Highlight parent IF inside it is a checked checkbox */
+.card:has(input[type="checkbox"]:checked){
+    background: #e6eaff;
+    background-color: var(--primary);
+}
+
+/* ===========================
+   7. :is() Selector
+=========================== */
+.multi-selector :is(h1, h2, h3) {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+/* ===========================
+   8. :where() Selector
+   (Zero specificity)
+=========================== */
+.multi-selector :where(h3, h4, h5) {
+    font-family: Georgia, serif;
+    margin-left: 10px;
+    background-color: #ff3b3b;
+    
+}

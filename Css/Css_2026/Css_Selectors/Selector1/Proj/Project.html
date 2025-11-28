@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Complete CSS Selectors Project</title>
+
+    <style>
+/* ---------------------------------------------------
+   1. BASIC SELECTORS
+--------------------------------------------------- */
+
+/* Universal Selector */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Element Selector */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Class Selector */
+.title {
+    color: royalblue;
+}
+
+/* ID Selector */
+#unique {
+    color: darkred;
+    font-weight: bold;
+}
+
+/* Group Selector */
+h2, h3 {
+    color: #444;
+}
+
+/* ---------------------------------------------------
+   2. COMBINATORS
+--------------------------------------------------- */
+
+/* Descendant */
+.container p {
+    color: green;
+}
+
+/* Child Selector */
+.child-demo > p {
+    background: #d8ffd8;
+    padding: 5px;
+}
+
+/* Adjacent Sibling */
+h3 + p {
+    color: blue;
+}
+
+/* General Sibling */
+h3 ~ p {
+    font-style: italic;
+}
+
+/* ---------------------------------------------------
+   3. ATTRIBUTE SELECTORS
+--------------------------------------------------- */
+
+input[type="text"] {
+    border: 2px solid orange;
+}
+
+a[href^="https"] {
+    color: blue;
+}
+
+img[src$=".png"] {
+    border: 3px solid purple;
+}
+
+input[placeholder*="email"] {
+    background: #fff3cd;
+}
+
+/* ---------------------------------------------------
+   4. PSEUDO-CLASS SELECTORS
+--------------------------------------------------- */
+
+/* Hover / Active / Focus */
+button:hover {
+    background: black;
+    color: white;
+}
+button:active {
+    background: red;
+}
+input:focus {
+    border: 3px solid green;
+}
+
+/* Checked */
+input:checked + label {
+    font-weight: bold;
+    color: green;
+}
+
+/* Disabled */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* first-child / nth-child / not */
+ul li:first-child {
+    color: brown;
+}
+ul li:nth-child(even) {
+    background: #f0f0f0;
+}
+ul li:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+/* ---------------------------------------------------
+   5. PSEUDO-ELEMENT SELECTORS
+--------------------------------------------------- */
+
+p::first-letter {
+    font-size: 30px;
+}
+
+p::selection {
+    background: yellow;
+}
+
+p.decor::before {
+    content: "👉 ";
+    color: blue;
+}
+p.decor::after {
+    content: " 🔥";
+    color: red;
+}
+
+/* ---------------------------------------------------
+   6. ADVANCED SELECTORS
+--------------------------------------------------- */
+
+/* :root – Global CSS variables */
+:root {
+    --primary: #4a5cff;
+    --danger: #ff3b3b;
+    --radius: 6px;
+}
+
+/* Use variable */
+.root-box {
+    background: var(--primary);
+    padding: 10px;
+    color: white;
+    border-radius: var(--radius);
+}
+
+/* :is() – multiple selectors */
+:is(h2, h3, h4) {
+    text-transform: uppercase;
+}
+
+/* :where() – zero specificity */
+.card :where(h4, p) {
+    margin: 5px 0;
+}
+
+/* :has() – parent selector */
+.box:has(input:checked) {
+    border: 2px solid green;
+    background: #eaffea;
+}
+
+/* ---------------------------------------------------
+   7. REAL-WORLD EXAMPLES
+--------------------------------------------------- */
+
+/* Highlight every even table row */
+table tr:nth-child(even) {
+    background: #f7f7f7;
+}
+
+/* Style all buttons except danger */
+button:not(.danger) {
+    background: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+button.danger {
+    background: var(--danger);
+    color: white;
+}
+
+/* Select first paragraph inside any div */
+div > p:first-of-type {
+    font-weight: bold;
+    color: #0077aa;
+}
+
+/* Style input only when empty */
+input:placeholder-shown {
+    border: 2px dashed #999;
+}
+
+
+/* ---------------------------------------------------
+   8. LIST MARKER + PLACEHOLDER + SELECTION
+--------------------------------------------------- */
+
+ul li::marker {
+    color: purple;
+    font-size: 18px;
+}
+
+input::placeholder {
+    color: gray;
+}
+
+    </style>
+</head>
+<body>
+
+    <h1>Complete CSS Selectors Project</h1>
+
+    <h2 class="title">Basic Selectors</h2>
+    <p id="unique">This is an ID selector example.</p>
+
+    <div class="container">
+        <p>Descendant selector text inside container.</p>
+    </div>
+
+    <div class="child-demo">
+        <p>Child selector applies here.</p>
+        <span><p>This paragraph is NOT selected.</p></span>
+    </div>
+
+    <h3>Sibling Selectors Below</h3>
+    <p>Adjacent sibling paragraph.</p>
+    <p>General sibling paragraph.</p>
+
+    <h2>Attribute Selectors</h2>
+    <input type="text" placeholder="Enter email">
+    <a href="https://google.com">Google Link</a>
+    <br><br>
+    <img src="sample.png" width="100" alt="Sample">
+
+    <h2>Pseudo Class Selectors</h2>
+    <button>Hover me</button>
+    <button disabled>Disabled</button>
+    <br><br>
+
+    <input type="checkbox" id="check1">
+    <label for="check1">I am checked</label>
+
+    <h2>List (first-child, nth-child, not)</h2>
+    <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+        <li>Pineapple</li>
+    </ul>
+
+    <h2>Pseudo Elements</h2>
+    <p class="decor">This paragraph uses before & after.</p>
+
+    <h2>Root, is(), where(), has()</h2>
+    <div class="root-box">Styled with CSS variables</div>
+
+    <div class="card">
+        <h4>Card Title</h4>
+        <p>Card content using :where().</p>
+    </div>
+
+    <div class="box">
+        <input type="checkbox" checked> This box is highlighted because it contains checkbox:checked
+    </div>
+
+    <h2>Real Examples</h2>
+
+    <table border="1" cellpadding="10">
+        <tr><td>Row 1</td></tr>
+        <tr><td>Row 2</td></tr>
+        <tr><td>Row 3</td></tr>
+    </table>
+
+    <br>
+
+    <button>Normal Button</button>
+    <button class="danger">Danger Button</button>
+
+    <h3>First paragraph inside div</h3>
+    <div>
+        <p>First paragraph selected.</p>
+        <p>Second paragraph not selected.</p>
+    </div>
+
+    <h2>Empty Input Example</h2>
+    <input type="text" placeholder="This input empty styling">
+
+</body>
+</html>
