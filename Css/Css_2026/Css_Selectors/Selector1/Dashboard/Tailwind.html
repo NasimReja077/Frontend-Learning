@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Advanced Selectors in Tailwind</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Tailwind CSS for advanced selectors -->
+  <style>
+     /* layer - layer is used to add custom styles in Tailwind
+     */
+    @layer utilities {
+      /* :has() – Card that contains an image */
+      .card:has(img) {
+        border-color: #4a59ff;
+      }
+
+      /* Empty p */
+      .empty-card p:empty {
+        background: yellow;
+        height: 20px;
+        display: block;
+      }
+
+      /* placeholder shown */
+      input:placeholder-shown {
+        border-color: orange !important;
+      }
+
+      /* Button turns orange if next input is empty */
+      button:has(+ #empty-check:placeholder-shown) {
+        background-color: orange !important;
+        color: white !important;
+      }
+
+      /* First paragraph inside blog */
+      .blog p:first-of-type {
+        font-weight: bold;
+      }
+
+      /* Last paragraph */
+      .blog p:last-of-type {
+        color: #555;
+      }
+
+      /* h3 + p */
+      .blog h3 + p {
+        color: purple;
+      }
+
+      /* h3 ~ p */
+      .blog h3 ~ p {
+        font-size: 14px;
+      }
+
+      /* Replace :is() – treat h3, p */
+      .blog h3,
+      .blog p {
+        padding-left: 6px;
+        border-left: 3px solid #ddd;
+      }
+
+      /* Attribute selector – image with “placehold” */
+      img[src*="placehold"] {
+        border-radius: 9999px;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 p-6 font-sans">
+
+  <!-- Header -->
+  <header class="text-center mb-12 bg-purple-600 p-6 rounded-lg shadow-lg">
+    <h1 class="text-4xl font-bold text-white">
+      Advanced CSS Selectors Demo (Tailwind + Custom CSS)
+    </h1>
+    <p class="text-gray-300">Using Tailwind with @layer utilities</p>
+  </header>
+
+  <!-- Theme Buttons -->
+  <section class="mb-10 flex gap-4 justify-center">
+    <button class="theme-btn bg-blue-600 text-white px-5 py-2 rounded-md" data-theme="light">Light</button>
+    <button class="theme-btn bg-red-600 text-white px-5 py-2 rounded-md danger" data-theme="dark">Dark</button>
+    <button class="theme-btn bg-blue-900 text-white px-5 py-2 rounded-md" data-theme="blue">Blue</button>
+  </section>
+
+  <!-- Cards -->
+  <section class="grid md:grid-cols-3 gap-6 mb-12">
+    <div class="card border rounded-xl p-4 bg-white shadow">
+      <h2 class="text-xl font-bold mb-2">Card One</h2>
+      <p class="mb-3">This card contains an image.</p>
+      <img src="https://placehold.co/80" alt="">
+    </div>
+
+    <div class="card border rounded-xl p-4 bg-white shadow">
+      <h2 class="text-xl font-bold mb-2">Card Two</h2>
+      <p>This card has no image.</p>
+    </div>
+
+    <div class="card empty-card border rounded-xl p-4 bg-white shadow">
+      <p></p>
+    </div>
+  </section>
+
+  <!-- Table -->
+  <section class="mb-12">
+    <h2 class="text-2xl font-bold mb-3">User Table</h2>
+
+    <table class="w-full border-collapse bg-white shadow rounded-lg overflow-hidden">
+      <tr class="bg-gray-200 font-bold text-left">
+        <th class="p-3">ID</th>
+        <th class="p-3">Name</th>
+        <th class="p-3">Role</th>
+      </tr>
+
+      <tr class="even:bg-gray-100">
+        <td class="p-3 font-bold">1</td>
+        <td class="p-3">Nasim</td>
+        <td class="p-3">Admin</td>
+      </tr>
+
+      <tr class="even:bg-gray-100">
+        <td class="p-3 font-bold">2</td>
+        <td class="p-3">Reja</td>
+        <td class="p-3">User</td>
+      </tr>
+
+      <tr class="even:bg-gray-100">
+        <td class="p-3 font-bold">3</td>
+        <td class="p-3">Mondal</td>
+        <td class="p-3">Manager</td>
+      </tr>
+
+      <tr class="even:bg-gray-100">
+        <td class="p-3 font-bold">4</td>
+        <td class="p-3">Ali</td>
+        <td class="p-3">Admin</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Form -->
+  <section class="mb-16">
+    <h2 class="text-2xl font-bold mb-4">Signup Form</h2>
+
+    <form class="grid gap-4 max-w-lg bg-white p-6 rounded-xl shadow">
+
+      <input type="text" placeholder="Full Name" required class="border p-3 rounded">
+
+      <input type="email" placeholder="Email" class="border p-3 rounded">
+
+      <input type="password" placeholder="Password" required class="border p-3 rounded">
+
+      <input type="text" placeholder="This input is empty →" id="empty-check" class="border p-3 rounded">
+
+      <button type="submit" class="submit-btn bg-green-600 text-white py-3 rounded font-bold">
+        Register
+      </button>
+    </form>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="mb-16">
+    <h2 class="text-2xl font-bold mb-4">Blog Section</h2>
+
+    <div class="blog bg-white border rounded-lg p-5 shadow mb-6">
+      <h3 class="text-lg font-bold">Blog Post 1</h3>
+      <p class="short">Short paragraph.</p>
+      <p class="long">This is a long paragraph with more detailed content.</p>
+    </div>
+
+    <div class="blog bg-white border rounded-lg p-5 shadow">
+      <h3 class="text-lg font-bold">Blog Post 2</h3>
+      <p>First paragraph only.</p>
+    </div>
+
+  </section>
+
+</body>
+</html>
