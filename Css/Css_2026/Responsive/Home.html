@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsive Design – Tailwind CSS</title>
+
+  <!-- TAILWIND CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- NAVBAR -->
+  <nav class="bg-white shadow px-6 py-4 flex justify-between items-center">
+    <h2 class="text-2xl font-bold">MySite</h2>
+
+    <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+
+    <ul id="menu"
+        class="hidden md:flex gap-6 text-lg font-medium">
+      <li class="hover:text-blue-500 cursor-pointer">Home</li>
+      <li class="hover:text-blue-500 cursor-pointer">About</li>
+      <li class="hover:text-blue-500 cursor-pointer">Services</li>
+      <li class="hover:text-blue-500 cursor-pointer">Contact</li>
+    </ul>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <ul id="mobileMenu"
+      class="hidden flex-col bg-white shadow-md px-6 py-4 text-lg md:hidden">
+    <li class="py-2 hover:text-blue-500">Home</li>
+    <li class="py-2 hover:text-blue-500">About</li>
+    <li class="py-2 hover:text-blue-500">Services</li>
+    <li class="py-2 hover:text-blue-500">Contact</li>
+  </ul>
+
+  <!-- HERO SECTION -->
+  <section class="text-center py-16 px-4">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-6">
+      Responsive Design Project
+    </h1>
+    <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
+      Learn how layouts change beautifully across different screen sizes using Tailwind CSS.
+    </p>
+  </section>
+
+  <!-- FEATURES GRID -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+    
+    <div class="bg-white shadow-lg rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-2">Fully Responsive</h3>
+      <p class="text-gray-700">Adapts perfectly to all screens.</p>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-2">Utility Classes</h3>
+      <p class="text-gray-700">Build faster with Tailwind utilities.</p>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-xl p-6">
+      <h3 class="text-xl font-bold mb-2">Mobile First</h3>
+      <p class="text-gray-700">Designed from mobile upwards.</p>
+    </div>
+
+  </section>
+
+  <!-- IMAGE + CONTENT SECTION -->
+  <section class="px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+
+    <img src="https://picsum.photos/600/400"
+         class="rounded-xl shadow-lg w-full" />
+
+    <div>
+      <h2 class="text-3xl font-bold mb-4">Adaptive Layouts</h2>
+      <p class="text-gray-700 text-lg">
+        Tailwind makes responsive design extremely easy with mobile-first classes.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white text-center py-6 mt-10">
+    <p>© 2025 My Responsive Project</p>
+  </footer>
+
+  <!-- JAVASCRIPT FOR MENU -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.onclick = () => {
+      mobileMenu.classList.toggle("hidden");
+    };
+  </script>
+
+</body>
+</html>
