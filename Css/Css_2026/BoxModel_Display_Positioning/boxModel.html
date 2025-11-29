@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>CSS Box Model Project</title>
+    <link rel="stylesheet" href="BoxModel.css" />
+</head>
+<body>
+
+    <h1 class="title">CSS Box Model Project</h1>
+
+    <!-- BOX MODEL DEMO SECTION -->
+    <section class="box-section">
+        <h2>1. Basic Box Model</h2>
+
+        <div class="box basic-box">
+            Content
+        </div>
+
+        <ul>
+            <li><strong>Padding:</strong> Inside space between content & border</li>
+            <li><strong>Border:</strong> The line surrounding padding</li>
+            <li><strong>Margin:</strong> Space outside the border</li>
+        </ul>
+
+    </section>
+
+    <!-- BORDER BOX vs CONTENT BOX -->
+    <section class="box-section">
+        <h2>2. content-box vs border-box</h2>
+
+        <div class="container">
+            <div class="content-box-demo">content-box (default)</div>
+            <div class="border-box-demo">border-box</div>
+        </div>
+    </section>
+
+    <!-- DISPLAY TYPES -->
+    <section class="box-section">
+        <h2>3. Display Property</h2>
+
+        <div class="display-demo">
+            <span class="inline-box">Inline</span>
+            <span class="inline-box">Inline</span>
+        </div>
+
+        <div class="display-demo">
+            <div class="block-box">Block 1</div>
+            <div class="block-box">Block 2</div>
+        </div>
+
+        <div class="display-demo">
+            <div class="inline-block-box">Inline-Block</div>
+            <div class="inline-block-box">Inline-Block</div>
+        </div>
+    </section>
+
+    <!-- POSITIONING -->
+    <section class="box-section">
+        <h2>4. Positioning</h2>
+
+        <div class="position-wrapper">
+            <div class="box static-box">Static</div>
+            <div class="box relative-box">Relative</div>
+            <div class="box absolute-box">Absolute</div>
+            <div class="box fixed-box">Fixed</div>
+            <div class="box sticky-box">Sticky</div>
+        </div>
+    </section>
+
+    <section class="box-section">
+        <h2>5. Parent → Child Layout</h2>
+        <div class="parent-box">
+            <div class="child-box">Child 1</div>
+            <div class="child-box">Child 2</div>
+            <div class="child-box">Child 3</div>
+        </div>
+    </section>
+
+    <section class="box-section">
+    <h2>6. Left–Right Blog Post Layout</h2>
+
+    <div class="blog-card">
+        <img src="https://plus.unsplash.com/premium_photo-1661339265887-be15949790ff?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blog image">
+
+        <div class="blog-content">
+            <h3>Understanding the CSS Box Model</h3>
+            <p>
+                The CSS Box Model is the foundation of web layout. It includes content,
+                padding, border, and margin. Understanding this helps you build proper UI.
+            </p>
+
+            <a href="#" class="read-more">Read More →</a>
+        </div>
+    </div>
+</section>
+
+<section class="box-section">
+    <h2>7. Sidebar + Content Layout</h2>
+
+    <div class="layout-wrapper">
+
+        <aside class="sidebar">
+            <h3>Sidebar</h3>
+            <ul>
+                <li>Home</li>
+                <li>Categories</li>
+                <li>Archives</li>
+                <li>Contact</li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h3>Main Blog Content</h3>
+            <p>
+                This layout demonstrates a parent container with two children:
+                a sidebar and main content. We use box model properties such as
+                margin, padding, and border along with display: flex.
+            </p>
+        </main>
+
+    </div>
+</section>
+
+
+
+<section class="box-section">
+    <h2>8. Nested Box Model Visualizer</h2>
+
+    <div class="outer-box">
+        Outer Box (Margin → Padding → Border)
+
+        <div class="inner-box">
+            Inner Box (Content inside)
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>
