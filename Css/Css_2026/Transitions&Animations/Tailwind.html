@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tailwind Transitions & Animations</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Tailwind Animations -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          keyframes: {
+            fadeIn: {
+              "0%": { opacity: "0", transform: "translateY(20px)" },
+              "100%": { opacity: "1", transform: "translateY(0)" }
+            },
+            bounceLoader: {
+              "0%,100%": { transform: "translateY(0)" },
+              "50%": { transform: "translateY(-20px)" }
+            },
+            typing: {
+              "0%": { width: "0%" },
+              "100%": { width: "100%" }
+            },
+            blink: {
+              "50%": { borderColor: "transparent" }
+            },
+            reveal: {
+              "0%": { clipPath: "inset(0 100% 0 0)" },
+              "100%": { clipPath: "inset(0 0 0 0)" }
+            }
+          },
+          animation: {
+            fadeIn: "fadeIn 1.2s ease forwards",
+            bounceLoader: "bounceLoader 0.6s infinite",
+            typing: "typing 3s steps(25) forwards, blink .7s infinite",
+            reveal: "reveal 1.2s ease forwards"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 p-8">
+
+  <h1 class="text-4xl font-bold text-center mb-10">Tailwind Transitions & Animations – Project</h1>
+
+  <!-- 1. BUTTON TRANSITION -->
+  <section class="mb-14">
+    <h2 class="text-2xl font-semibold mb-4">1. Smooth Hover Button</h2>
+
+    <button class="px-6 py-3 bg-blue-600 text-white rounded-lg 
+      transition-all duration-300 hover:bg-blue-700 hover:scale-105">
+      Hover Me
+    </button>
+  </section>
+
+  <!-- 2. CARD HOVER ZOOM -->
+  <section class="mb-14">
+    <h2 class="text-2xl font-semibold mb-4">2. Card Hover Zoom</h2>
+
+    <div class="w-80 bg-white rounded-xl shadow overflow-hidden 
+      hover:shadow-xl transition-all duration-300">
+      <div class="overflow-hidden">
+        <img src="https://picsum.photos/400" 
+             class="w-full transition-transform duration-500 hover:scale-110" />
+      </div>
+      <div class="p-4">
+        <h3 class="text-xl font-bold">Beautiful Nature</h3>
+        <p class="text-gray-600">Amazing zoom effect on hover.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SLIDING SIDEBAR -->
+  <section class="mb-14">
+    <h2 class="text-2xl font-semibold mb-4">3. Sliding Sidebar</h2>
+
+    <button id="toggleMenu"
+      class="px-5 py-2 bg-gray-800 text-white rounded-lg">
+      Open Sidebar
+    </button>
+
+    <div class="sidebar fixed top-0 left-0 h-full w-64 bg-gray-900 text-white p-6 
+      transform -translate-x-full transition-transform duration-500">
+      <h3 class="text-2xl font-bold mb-6">Menu</h3>
+      <ul class="space-y-3 text-lg">
+        <li>Home</li>
+        <li>Blog</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4. FADE-IN ON LOAD -->
+  <section class="mb-14">
+    <h2 class="text-2xl font-semibold mb-4">4. Fade-In on Page Load</h2>
+
+    <div class="fade-box p-6 bg-white shadow rounded-lg w-64 
+      opacity-0 animate-fadeIn">
+      I fade in smoothly!
+    </div>
+  </section>
+
+  <!-- 5. BOUNCE LOADER -->
+  <section class="mb-14">
+    <h2 class="text-2xl font-semibold mb-4">5. Bouncing Loader</h2>
+
+    <div class="w-10 h-10 bg-blue-600 rounded-full animate-bounceLoader"></div>
+  </section>
+
+  <!-- 6. TYPING EFFECT -->
+  <section class="mb-14">
+    <h2 class="text-2xl font-semibold mb-4">6. Text Typing Effect</h2>
+
+    <h3 class="typing-text overflow-hidden border-r-4 border-black pr-2
+      whitespace-nowrap text-3xl font-bold w-0
+      animate-typing">
+      CSS Animations Project
+    </h3>
+  </section>
+
+  <!-- 7. IMAGE REVEAL -->
+  <section class="mb-14">
+    <h2 class="text-2xl font-semibold mb-4">7. Image Hover Reveal Effect</h2>
+
+    <div class="reveal-box w-96 h-60 overflow-hidden rounded-lg bg-gray-300">
+      <img src="https://picsum.photos/500/300"
+           class="w-full h-full object-cover opacity-0 hover:opacity-100 
+           transition-opacity duration-700 animate-reveal"/>
+    </div>
+  </section>
+
+  <!-- Sidebar Toggle Script -->
+  <script>
+    const btn = document.getElementById("toggleMenu");
+    const sidebar = document.querySelector(".sidebar");
+
+    btn.onclick = () => {
+      sidebar.classList.toggle("-translate-x-full");
+    };
+  </script>
+
+</body>
+</html>

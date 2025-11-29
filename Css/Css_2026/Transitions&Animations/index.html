@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>CSS Transitions & Animations Project</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <h1 class="title">CSS Transitions & Animations – Full Project</h1>
+
+    <!-- 1. BUTTON TRANSITION -->
+    <section class="section">
+        <h2>1. Smooth Hover Button</h2>
+        <button class="btn">Hover Me</button>
+    </section>
+
+    <!-- 2. CARD HOVER ZOOM -->
+    <section class="section">
+        <h2>2. Card Hover Zoom</h2>
+
+        <div class="card">
+            <img src="https://picsum.photos/400" alt="">
+            <h3>Beautiful Nature</h3>
+            <p>Amazing zoom effect on hover.</p>
+        </div>
+    </section>
+
+    <!-- 3. SLIDING SIDEBAR -->
+    <section class="section">
+        <h2>3. Sliding Sidebar</h2>
+        <button id="toggleMenu">Open Sidebar</button>
+
+        <div class="sidebar">
+            <h3>Menu</h3>
+            <ul>
+                <li>Home</li>
+                <li>Blog</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 4. FADE-IN ON LOAD -->
+    <section class="section">
+        <h2>4. Fade-In on Page Load</h2>
+        <div class="fade-box">I fade in smoothly!</div>
+    </section>
+
+    <!-- 5. BOUNCE LOADER -->
+    <section class="section">
+        <h2>5. Bouncing Loader</h2>
+        <div class="loader"></div>
+    </section>
+
+    <!-- 6. TYPING EFFECT -->
+    <section class="section">
+        <h2>6. Text Typing Effect</h2>
+        <h3 class="typing-text">CSS Animations Project</h3>
+    </section>
+
+    <!-- 7. IMAGE REVEAL -->
+    <section class="section">
+        <h2>7. Image Hover Reveal Effect</h2>
+
+        <div class="reveal-box">
+            <img src="https://picsum.photos/500/300" />
+        </div>
+    </section>
+
+    <script>
+        const btn = document.getElementById("toggleMenu");
+        const sidebar = document.querySelector(".sidebar");
+
+        btn.onclick = () => sidebar.classList.toggle("active");
+    </script>
+
+</body>
+</html>

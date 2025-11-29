@@ -1,0 +1,190 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f8f8f8;
+}
+
+.section {
+    background: #fff;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* -------------------------------
+   1. MULTI-STEP LOADER
+-------------------------------- */
+.dot-loader {
+    display: flex;
+    gap: 12px;
+}
+
+.dot-loader span {
+    width: 14px;
+    height: 14px;
+    background: royalblue;
+    border-radius: 50%;
+    animation: pulse 0.9s infinite ease-in-out;
+}
+
+.dot-loader span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.dot-loader span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1); opacity: .3; }
+    50%  { transform: scale(1.6); opacity: 1; }
+    100% { transform: scale(1); opacity: .3; }
+}
+
+/* -------------------------------
+   2. MORPHING SHAPE
+-------------------------------- */
+.morph-box {
+    width: 200px;
+    height: 200px;
+    background: hotpink;
+    animation: morph 6s infinite ease-in-out;
+}
+
+@keyframes morph {
+    0%, 100% {
+        border-radius: 20% 50% 30% 40%;
+        transform: rotate(0deg);
+        background: #ff478a;
+    }
+    25% {
+        border-radius: 50% 20% 40% 80%;
+        transform: rotate(90deg);
+        background: #ff6fb5;
+    }
+    50% {
+        border-radius: 30% 60% 60% 30%;
+        transform: rotate(180deg);
+        background: #ff93d6;
+    }
+    75% {
+        border-radius: 80% 40% 20% 50%;
+        transform: rotate(270deg);
+        background: #ff66c4;
+    }
+}
+
+/* -------------------------------
+   3. 3D ROTATING CARD
+-------------------------------- */
+.card-3d {
+    width: 200px;
+    height: 260px;
+    perspective: 900px;
+}
+
+.card-3d .inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+
+    animation: rotate3D 4s infinite ease-in-out;
+}
+
+.card-3d .inner div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.front { background: skyblue; }
+.back {
+    background: tomato;
+    transform: rotateY(180deg);
+}
+
+@keyframes rotate3D {
+    0%   { transform: rotateY(0deg); }
+    50%  { transform: rotateY(180deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+/* -------------------------------
+   4. MOVING GRADIENT BACKGROUND
+-------------------------------- */
+.gradient-box {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+
+    background: linear-gradient(45deg, #4facfe, #00f2fe, #ff9a9e, #fad0c4);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;
+}
+
+@keyframes gradientMove {
+    0%   { background-position: 0 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
+}
+
+/* -------------------------------
+   5. WAVY TEXT ANIMATION
+-------------------------------- */
+.wave-text span {
+    display: inline-block;
+    font-size: 40px;
+    animation: wave 1.3s infinite ease-in-out;
+}
+
+.wave-text span:nth-child(1) { animation-delay: 0s; }
+.wave-text span:nth-child(2) { animation-delay: 0.1s; }
+.wave-text span:nth-child(3) { animation-delay: 0.2s; }
+.wave-text span:nth-child(4) { animation-delay: 0.3s; }
+.wave-text span:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-18px); }
+}
+
+/* -------------------------------
+   6. SCROLL REVEAL (CSS ONLY)
+-------------------------------- */
+.big-area {
+    height: 400px;
+    margin-top: 80px;
+}
+
+.reveal-box {
+    width: 300px;
+    height: 120px;
+    background: mediumseagreen;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+
+    animation: reveal 1.5s ease forwards;
+    animation-timeline: scroll();
+    animation-range: entry 20% cover 50%;
+}
+
+@keyframes reveal {
+    from { opacity: 0; transform: translateY(80px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
