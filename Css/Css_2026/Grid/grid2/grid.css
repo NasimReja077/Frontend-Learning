@@ -1,0 +1,151 @@
+body {
+    font-family: Arial;
+    background: #f4f4f4;
+    padding: 40px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section {
+    background: rgb(255, 130, 130);
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 8px;
+}
+
+.item, .box, .card {
+    background: #228fe8;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+
+/* 1. BASIC GRID */
+.basic-grid {
+     display: grid;
+     grid-template-columns: 1fr 1fr 2fr;
+     gap: 20px;
+}
+
+/* 2. REPEAT + FR */
+.repeat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* 3. minmax() */
+.minmax-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+/* 4. auto-fit / auto-fill */
+.auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* 5. GRID AUTO ROWS */
+.auto-rows-grid {
+    display: grid;
+    grid-auto-rows: 65px;
+    gap: 15px;
+}
+
+.tall {
+    height: 200px;
+    background: #ef5350;
+}
+
+
+/* 6. GRID AUTO FLOW */
+.flow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-auto-flow: row dense;
+    gap: 10px;
+}
+
+
+/* 7. ITEM PLACEMENT */
+.placement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.item1 {
+    grid-column: span 2;
+}
+
+.item4 {
+    grid-row: span 2;
+}
+
+/* 8. GRID AREAS */
+.areas-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    gap: 15px;
+}
+
+.header { grid-area: header; background: #3f51b5; }
+.sidebar { grid-area: sidebar; background: #009688; }
+.main   { grid-area: main; background: #ff9800; }
+.footer { grid-area: footer; background: #795548; }
+
+
+/* 9. DASHBOARD */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 150px;
+    gap: 20px;
+}
+
+.a { grid-column: span 2; }
+.d { grid-row: span 2; }
+
+
+/* 10. CARDS LAYOUT */
+.card-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.card {
+    background: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 11. MASONRY GRID (ADVANCED) */
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-auto-rows: 120px;
+    gap: 15px;
+}
+
+.tall {
+    grid-row: span 2;
+}
+
+.medium {
+    grid-row: span 1.5;
+}

@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* MAIN LAYOUT (Sidebar + Content) */
+.layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    height: 100vh;
+}
+
+/* FIXED SIDEBAR */
+.sidebar {
+    background: #111827;
+    color: white;
+    padding: 30px 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 260px;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar nav a {
+    display: block;
+    color: #d1d5db;
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* SCROLL CONTENT */
+.content {
+    background: #f3f4f6;
+    padding: 30px;
+    margin-left: 260px;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.blog-post {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
