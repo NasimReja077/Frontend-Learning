@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern CSS Layouts - Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- STICKY NAVBAR -->
+  <nav class="bg-blue-600 text-white sticky top-0 z-50 shadow px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">Modern Layout</h1>
+    <ul class="hidden md:flex gap-6">
+      <li class="hover:text-yellow-400 cursor-pointer">Home</li>
+      <li class="hover:text-yellow-400 cursor-pointer">About</li>
+      <li class="hover:text-yellow-400 cursor-pointer">Services</li>
+      <li class="hover:text-yellow-400 cursor-pointer">Contact</li>
+    </ul>
+    <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <ul id="mobileMenu" class="hidden flex-col md:hidden bg-white shadow px-6 py-4 gap-2">
+    <li class="hover:text-blue-600 py-1">Home</li>
+    <li class="hover:text-blue-600 py-1">About</li>
+    <li class="hover:text-blue-600 py-1">Services</li>
+    <li class="hover:text-blue-600 py-1">Contact</li>
+  </ul>
+
+  <!-- HERO SECTION -->
+  <section class="text-center py-16 px-4 bg-gradient-to-r from-blue-400 to-purple-600 text-white">
+    <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Modern CSS Layouts</h2>
+    <p class="text-lg md:text-2xl max-w-2xl mx-auto">Explore Flexbox, Grid, Sticky, and Responsive layouts using Tailwind CSS.</p>
+  </section>
+
+  <!-- FLEXBOX SECTION -->
+  <section class="container mx-auto py-16 px-4">
+    <h2 class="text-3xl font-bold mb-6">Flexbox Layout</h2>
+    <div class="flex flex-wrap justify-between gap-4">
+      <div class="bg-blue-500 text-white p-6 rounded flex-1 min-w-[150px]">Flex Item 1</div>
+      <div class="bg-green-500 text-white p-6 rounded flex-1 min-w-[150px]">Flex Item 2</div>
+      <div class="bg-yellow-500 text-white p-6 rounded flex-1 min-w-[150px]">Flex Item 3</div>
+    </div>
+  </section>
+
+  <!-- GRID SECTION -->
+  <section class="container mx-auto py-16 px-4">
+    <h2 class="text-3xl font-bold mb-6">Grid Layout</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-purple-500 text-white p-6 rounded">Grid Item 1</div>
+      <div class="bg-indigo-500 text-white p-6 rounded">Grid Item 2</div>
+      <div class="bg-pink-500 text-white p-6 rounded">Grid Item 3</div>
+      <div class="bg-red-500 text-white p-6 rounded">Grid Item 4</div>
+      <div class="bg-teal-500 text-white p-6 rounded">Grid Item 5</div>
+      <div class="bg-orange-500 text-white p-6 rounded">Grid Item 6</div>
+    </div>
+  </section>
+
+  <!-- MULTI-COLUMN TEXT -->
+  <section class="container mx-auto py-16 px-4">
+    <h2 class="text-3xl font-bold mb-6">Multi-Column Text</h2>
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum hendrerit, nulla a posuere sagittis, sapien leo tempus leo, ac laoreet libero magna ut lacus.</p>
+      <p>Morbi non dolor nec metus dictum malesuada. Curabitur volutpat fermentum ligula, vitae hendrerit nulla faucibus in.</p>
+      <p>Integer nec ex a nunc scelerisque tincidunt. Cras nec dolor ac diam vehicula vestibulum.</p>
+      <p>Aliquam erat volutpat. Fusce vitae nisi sed lacus commodo hendrerit.</p>
+      <p>Suspendisse potenti. Vivamus tristique erat non erat ultricies, at convallis urna luctus.</p>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white text-center py-6">
+    © 2025 Modern Layout Project
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.onclick = () => mobileMenu.classList.toggle('hidden');
+  </script>
+
+</body>
+</html>

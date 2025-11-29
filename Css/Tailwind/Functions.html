@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tailwind CSS Functions & Advanced Features</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom CSS variables */
+    :root {
+      --main-color: #4f46e5;
+      --secondary-color: #facc15;
+    }
+
+    /* Custom Tailwind extensions */
+    @layer utilities {
+      .width-calc {
+        width: calc(100% - 40px);
+      }
+      .font-clamp {
+        font-size: clamp(16px, 2vw, 24px);
+      }
+      .min-max-box {
+        width: min(300px, 50%);
+        height: max(150px, 20%);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans p-8">
+
+  <h1 class="text-4xl font-bold text-center mb-10 text-[var(--main-color)]">
+    Tailwind CSS Functions & Advanced Features
+  </h1>
+
+  <!-- CSS Variables -->
+  <section class="mb-10 p-6 bg-white shadow rounded-lg">
+    <h2 class="text-2xl font-bold mb-4">1. CSS Variables</h2>
+    <p class="text-[var(--secondary-color)] font-semibold">
+      This text uses a CSS variable for color.
+    </p>
+    <div class="mt-4 p-4 rounded bg-[var(--main-color)] text-white text-center">
+      Box using CSS variable background
+    </div>
+  </section>
+
+  <!-- calc() -->
+  <section class="mb-10 p-6 bg-white shadow rounded-lg">
+    <h2 class="text-2xl font-bold mb-4">2. calc()</h2>
+    <div class="width-calc bg-blue-500 text-white text-center p-4 rounded">
+      Width calculated using <code>calc(100% - 40px)</code>
+    </div>
+  </section>
+
+  <!-- clamp() -->
+  <section class="mb-10 p-6 bg-white shadow rounded-lg">
+    <h2 class="text-2xl font-bold mb-4">3. clamp()</h2>
+    <p class="font-clamp bg-yellow-200 p-4 rounded text-center">
+      Font size adjusts with viewport, using <code>clamp(16px, 2vw, 24px)</code>
+    </p>
+  </section>
+
+  <!-- min() / max() -->
+  <section class="mb-10 p-6 bg-white shadow rounded-lg">
+    <h2 class="text-2xl font-bold mb-4">4. min() / max()</h2>
+    <div class="min-max-box bg-green-500 text-white flex justify-center items-center rounded">
+      Width min(300px,50%) & Height max(150px,20%)
+    </div>
+  </section>
+
+  <!-- Responsive Example -->
+  <section class="mb-10 p-6 bg-white shadow rounded-lg">
+    <h2 class="text-2xl font-bold mb-4">5. Advanced Responsive</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="bg-purple-500 text-white p-6 rounded text-center">Col 1</div>
+      <div class="bg-purple-600 text-white p-6 rounded text-center">Col 2</div>
+      <div class="bg-purple-700 text-white p-6 rounded text-center">Col 3</div>
+    </div>
+  </section>
+
+  <!-- Root variables with dark mode -->
+  <section class="p-6 bg-white shadow rounded-lg">
+    <h2 class="text-2xl font-bold mb-4">6. :root and Dark Mode</h2>
+    <p class="text-gray-700 dark:text-gray-200">
+      Root variables can control theme colors. Toggle dark mode on your browser or system.
+    </p>
+    <div class="mt-4 p-4 rounded bg-[var(--main-color)] text-white text-center">
+      Box with variable background
+    </div>
+  </section>
+
+</body>
+</html>
