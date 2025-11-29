@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masonry Grid - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom masonry style using CSS columns */
+    .masonry {
+      column-count: 1;
+      column-gap: 1rem;
+    }
+    @media(min-width: 640px) { /* sm */
+      .masonry {
+        column-count: 2;
+      }
+    }
+    @media(min-width: 1024px) { /* lg */
+      .masonry {
+        column-count: 3;
+      }
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans p-6">
+
+  <h1 class="text-3xl font-bold text-center mb-8">Masonry Grid Layout - Tailwind CSS</h1>
+
+  <div class="masonry">
+    <div class="masonry-item bg-blue-500 p-4 rounded text-white">Item 1 - short</div>
+    <div class="masonry-item bg-green-500 p-4 rounded text-white">Item 2 - taller content<br>Extra line</div>
+    <div class="masonry-item bg-yellow-500 p-4 rounded text-white">Item 3 - short</div>
+    <div class="masonry-item bg-purple-500 p-4 rounded text-white">Item 4 - very tall content<br>Line 2<br>Line 3<br>Line 4</div>
+    <div class="masonry-item bg-red-500 p-4 rounded text-white">Item 5 - medium height<br>Line 2</div>
+    <div class="masonry-item bg-indigo-500 p-4 rounded text-white">Item 6 - short</div>
+    <div class="masonry-item bg-pink-500 p-4 rounded text-white">Item 7 - tall content<br>Line 2<br>Line 3</div>
+    <div class="masonry-item bg-teal-500 p-4 rounded text-white">Item 8 - short</div>
+  </div>
+
+</body>
+</html>
