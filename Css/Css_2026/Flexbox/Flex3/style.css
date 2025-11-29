@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  /* flex-wrap: wrap; */
+}
+
+/* All boxes */
+.box {
+  color: purple;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+.box1 {
+  background: #007bff;
+  flex: 1 1 150px;     /* grow, shrink, basis */
+}
+
+
+.box2 {
+  background: #28a745;
+  flex: 2 1 200px;     /* grows twice as fast as box1 */
+}
+
+
+.box3 {
+  background: #ff5733;
+  flex: 1 0 250px;     /* cannot shrink (shrink=0) */
+}
+
+
+/* Box 1 (flex: 1 1 150px)
+Grow = 1 → can grow normally
+Shrink = 1 → can shrink
+Basis = 150px → starts with 150px width
+✔ Normal behavior box.
+
+🟢 Box 2 (flex: 2 1 200px)
+
+Grow = 2 → grows twice as much as Box 1
+Shrink = 1 → can shrink if space is small
+Basis = 200px → starts bigger
+✔ Fast-growing box.
+
+🔴 Box 3 (flex: 1 0 250px)
+
+Grow = 1 → grows normally
+Shrink = 0 → never shrinks
+Basis = 250px → always stays at least 250px wide
+✔ Good for important content that should not shrink.
+
+📱 Responsive Behavior Explanation
+Try resizing your browser:
+When screen is wide:
+Box2 becomes the largest (flex-grow: 2)
+Box1 and Box3 share remaining space
+
+When screen becomes smaller:
+Box1 shrinks
+Box2 shrinks
+Box3 remains 250px minimum (shrink: 0)
+This shows the real power of grow–shrink–basis */

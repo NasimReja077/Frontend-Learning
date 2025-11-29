@@ -1,0 +1,199 @@
+body {
+    font-family: Arial;
+    background: #f5f5f5;
+    padding: 30px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+/* ==================== 1. FLEX WRAP ==================== */
+
+
+.wrap-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+.wrap-box .item {
+    background: #4caf50;
+    padding: 20px;
+    color: white;
+    flex: 0 0 150px;
+}
+
+/* ==================== 2. FLEX GROW ==================== */
+
+.grow-box {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gitem {
+    background: #1976d2;
+    color: white;
+    padding: 20px;
+}
+
+.g1 { flex-grow: 1; }
+.g2 { flex-grow: 2; }
+.g3 { flex-grow: 3; }
+
+
+/* ==================== 3. FLEX SHRINK ==================== */
+
+.shrink-box {
+    display: flex;
+    width: 300px;
+    gap: 10px;
+}
+
+.sitem {
+    padding: 20px;
+    background: #d32f2f;
+    color: white;
+    width: 200px;
+}
+
+
+.s0 { flex-shrink: 2; }
+.s1 { flex-shrink: 0; }
+.s2 { flex-shrink: 1; }
+
+/* ==================== 4. ALIGN-SELF ==================== */
+
+.self-box {
+    display: flex;
+    background: #eee;
+    height: 150px;
+}
+
+.self-item {
+    background: #ff9800;
+    padding: 20px;
+    margin: 5px;
+    color: white;
+}
+
+.a1 { align-self: flex-start; }
+.a2 { align-self: center; }
+.a3 { align-self: flex-end; }
+
+
+/* ==================== 5. FLEX SHORTHAND ==================== */
+
+.flex-box {
+    display: flex;
+    gap: 10px;
+}
+
+.flex-item {
+    padding: 20px;
+    background: #9c27b0;
+    color: white;
+}
+
+
+.f1 { flex: 1; }
+.f2 { flex: 2; }
+.f3 { flex: 3; }
+
+
+/* ==================== 6. Center Anything ==================== */
+
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background: #ddd;
+}
+
+.center-box {
+    background: #333;
+    color: white;
+    padding: 20px 40px;
+}
+
+/* ==================== 7. Equal Rows & Columns ==================== */
+
+.equal-box {
+    display: flex;
+}
+
+.equal-item {
+    flex: 1;
+    background: #03a9f4;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+/* ==================== 8. Sidebar Layout ==================== */
+
+.layout {
+    display: flex;
+    gap: 10px;
+}
+
+.sidebar {
+    width: 250px;
+    background: #455a64;
+    color: white;
+    padding: 20px;
+}
+
+.content {
+    flex: 1;
+    background: #b0bec5;
+    padding: 20px;
+}
+
+/* ==================== 9. Card Layout ==================== */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: #27ddbc8a;
+    color: #1976d2;
+    padding: 20px;
+    width: calc(33% - 20px);
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* ==================== 10. Button Group ==================== */
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-group button {
+    padding: 10px 20px;
+    border: none;
+    background: #2196f3;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-group button:hover {
+    background: #1976d2;
+}

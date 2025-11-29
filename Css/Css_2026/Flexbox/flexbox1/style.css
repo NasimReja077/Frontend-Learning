@@ -1,0 +1,143 @@
+/* GENERAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    line-height: 1.5;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1f2937;
+    padding: 15px 40px;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    justify-content:space-around;
+    list-style: none;
+}
+
+.nav-links li:hover {
+    color: #60a5fa;
+    cursor: pointer;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    color: white;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.btn {
+    margin-top: 15px;
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    background: white;
+    color: #1e40af;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+/* FEATURES SECTION */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    background: #f9fafb;
+}
+
+.feature-card {
+    padding: 30px;
+    background: #e5e7eb;
+    width: 30%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+
+
+/* MAIN LAYOUT (Sidebar + Content) */
+.main-layout {
+    display: flex;
+    padding: 40px;
+    gap: 30px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background: #e0e7ff;
+    border-radius: 8px;
+}
+
+.sidebar ul {
+    margin-top: 10px;
+}
+
+/* CONTENT */
+.content {
+    flex: 1;
+    padding: 20px;
+    background: #8bb0fa;
+    border-radius: 8px;
+}
+
+/* CARD SECTION (using flex-wrap) */
+.card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    width: calc(50% - 20px);
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature-card {
+        width: 100%;
+    }
+
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
