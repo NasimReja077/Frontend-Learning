@@ -1,0 +1,136 @@
+/* ---------- Root Styles ---------- */
+:root {
+  --bg-dark: #0f172a;
+  --bg-light: #ffffff;
+
+  --card-dark: #1e293b;
+  --card-light: #f8fafc;
+
+  --text-dark: #e2e8f0;
+  --text-light: #0f172a;
+
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --error: #dc2626;
+
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* ---------- Global ---------- */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Light theme auto */
+@media (prefers-color-scheme: light) {
+  body {
+    background: var(--bg-light);
+    color: var(--text-light);
+  }
+}
+
+/* ---------- Card Container ---------- */
+.form-container {
+  width: 420px;
+  background: var(--card-dark);
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@media (prefers-color-scheme: light) {
+  .form-container {
+    background: var(--card-light);
+  }
+}
+
+.form-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* ---------- Inputs ---------- */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #94a3b8;
+  background: transparent;
+  color: inherit;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.3);
+  outline: none;
+}
+
+/* ---------- Terms Checkbox ---------- */
+.checkbox-group {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+
+.checkbox-group input {
+  width: auto;
+}
+
+/* ---------- Error Messages ---------- */
+.error {
+  color: var(--error);
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- Button ---------- */
+.btn-submit {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+  transition: 0.25s;
+}
+
+.btn-submit:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 6px 14px rgba(79,70,229,0.4);
+}
+
+/* ---------- Animation ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
