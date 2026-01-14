@@ -1,0 +1,20 @@
+/* Mobile toolbar horizontal scroll */
+@media (max-width: 768px) {
+  .md-editor-toolbar {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .md-editor-toolbar::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .md-editor-toolbar::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 10px;
+  }
+
+  .md-editor-toolbar-item {
+    min-width: 36px;
+  }
+}
