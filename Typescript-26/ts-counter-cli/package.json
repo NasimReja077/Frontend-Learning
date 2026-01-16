@@ -1,0 +1,23 @@
+{
+  "name": "ts-counter-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "inquirer": "^13.2.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.9",
+    "@types/node": "^25.0.9",
+    "install": "^0.13.0",
+    "npm": "^11.7.0",
+    "typescript": "^5.9.3"
+  }
+}
