@@ -1,0 +1,81 @@
+.logoWrap {
+  padding: 20px;
+  border-bottom: 1px solid #0f172a;
+  color: white;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+.sectionHeader {
+  font-size: 11px;
+  color: #64748b;
+  padding: 10px 20px;
+}
+
+.empty {
+  padding: 10px 20px;
+  color: #475569;
+}
+
+.count {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.tagsList {
+  padding: 0 10px;
+}
+
+.tagItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  color: #94a3b8;
+  border-radius: 8px;
+
+  &:hover {
+    background: #0f172a;
+  }
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.bottom {
+  margin-top: auto;
+  padding: 15px;
+  border-top: 1px solid #0f172a;
+}
+
+.userRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logoutBtn {
+  margin-top: 10px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
