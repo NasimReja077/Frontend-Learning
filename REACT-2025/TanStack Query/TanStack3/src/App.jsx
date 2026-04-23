@@ -9,7 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <SearchProvider>
-        <div className="min-h-screen bg-gradient-to-br from-[#020617] via-[#020617] to-[#0f172a] text-gray-200">
+        <div className="min-h-screen bg-linear-to-br from-[#020617] via-[#020617] to-[#0f172a] text-gray-200">
           <Navbar />
 
           <Routes>
