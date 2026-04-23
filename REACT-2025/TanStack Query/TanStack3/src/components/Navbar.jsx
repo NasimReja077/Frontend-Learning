@@ -1,90 +1,76 @@
-import { Link, useLocation } from "react-router-dom";
-import { MdHome, MdFavorite } from "react-icons/md";
-import { SiDragonframe } from "react-icons/si";
+import { Link, useLocation } from 'react-router-dom'
+import { MdHome, MdFavorite } from 'react-icons/md'
+import { SiDragonframe } from 'react-icons/si'
+import { useFavorites } from '../features/favorites/useFavorites'
 
 const Navbar = () => {
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
+  const { favorites } = useFavorites()
 
-  const navItem = (to, label, Icon) => {
-    const active = pathname === to;
-
+  const navItem = (to, label, Icon, badge) => {
+    const active = pathname === to
     return (
       <Link
         to={to}
         className={`
-          flex items-center gap-2 px-4 py-2 rounded-xl
-          transition-all duration-300 cursor-pointer
+          relative flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium
+          transition-all duration-200 cursor-pointer
           ${active
-            ? "bg-gradient-to-r from-yellow-400 to-orange-500 text-black shadow-md scale-105"
-            : "text-gray-300 hover:text-yellow-400 hover:bg-white/5"
+            ? 'bg-linear-to-r from-yellow-400 to-orange-500 text-black shadow-lg shadow-orange-500/25 scale-105'
+            : 'text-gray-400 hover:text-white hover:bg-white/5'
           }
         `}
       >
-        <Icon size={20} />
-        {label}
+        <Icon size={18} />
+        <span className="hidden sm:inline">{label}</span>
+        {badge > 0 && (
+          <span className={`
+            absolute -top-1.5 -right-1.5
+            min-w-4.5 h-4.5 px-1
+            flex items-center justify-center
+            text-[10px] font-bold rounded-full
+            ${active ? 'bg-black/30 text-white' : 'bg-red-500 text-white'}
+          `}>
+            {badge}
+          </span>
+        )}
       </Link>
-    );
-  };
+    )
+  }
 
   return (
-    <div
-      className="
+    <nav className="
       sticky top-0 z-50
-      backdrop-blur-xl bg-[#020617]/80
-      border-b border-yellow-500/20
+      backdrop-blur-xl bg-[#020617]/85
+      border-b border-white/8
       px-6 py-3
       flex justify-between items-center
-    "
-    >
-      <h1
-        className="
-  flex items-center gap-2
-  text-2xl md:text-3xl font-extrabold tracking-wide
-  relative
-"
-      >
-        {/* 🔥 Glow Background */}
-        <span className="absolute inset-0 blur-xl opacity-40 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500"></span>
+    ">
 
-        {/* TEXT */}
-        <span
-          className="
-    relative z-10
-    bg-gradient-to-r from-yellow-300 via-orange-400 to-red-500
-    bg-clip-text text-transparent
-    drop-shadow-[0_0_12px_rgba(255,140,0,0.8)]
-  "
-        >
+      {/* ── Logo ── */}
+      <Link to="/" className="relative flex items-center gap-2.5 group">
+        {/* glow */}
+        <span className="absolute inset-0 blur-xl opacity-0 group-hover:opacity-40 bg-linear-to-r from-yellow-400 to-orange-500 transition-opacity duration-500" />
+
+        <SiDragonframe className="relative z-10 text-orange-400 text-xl drop-shadow-[0_0_8px_rgba(255,165,0,0.6)]" />
+
+        <span className="relative z-10 text-xl font-extrabold bg-linear-to-r from-yellow-300 via-orange-400 to-red-500 bg-clip-text text-transparent tracking-wide">
           DRAGON BALL
         </span>
 
-        {/* ⚡ SUPER TEXT */}
-        <span
-          className="
-    relative z-10
-    text-yellow-400 font-black
-    animate-pulse
-  "
-        >
-          SUPER
+        <span className="relative z-10 text-yellow-400 font-black text-xl animate-pulse">
+          Z
         </span>
+      </Link>
 
-        {/* 🐉 ICON */}
-        <SiDragonframe
-          className="
-    text-orange-400 text-2xl
-    drop-shadow-[0_0_10px_rgba(255,165,0,0.8)]
-  "
-        />
-      </h1>
-
-      {/* 🧭 NAV LINKS */}
-      <div className="flex gap-4">
-        {navItem("/", "Home", MdHome)}
-        {navItem("/favorites", "Favorites", MdFavorite)}
+      {/* ── Nav links ── */}
+      <div className="flex items-center gap-2">
+        {navItem('/', 'Home', MdHome, 0)}
+        {navItem('/favorites', 'Favorites', MdFavorite, favorites.length)}
       </div>
-    </div>
-  );
-};
 
-export default Navbar;
+    </nav>
+  )
+}
+
+export default Navbar
