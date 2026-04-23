@@ -1,16 +1,81 @@
-# React + Vite
+# 🐉 Dragon Ball Characters App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React application that displays Dragon Ball characters using infinite scrolling, search, and favorites functionality.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+* 🔍 Search characters (Goku, Vegeta, Frieza...)
+* ♾️ Infinite scrolling (React Query)
+* ❤️ Add/Remove favorites (localStorage)
+* 📄 Character detail page
+* ⚡ Optimistic UI updates
+* 🌙 Dark modern UI (Tailwind CSS)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React JS
+* React Router DOM
+* TanStack React Query
+* Axios
+* Tailwind CSS
+* LocalStorage (Favorites)
+
+---
+
+## 📦 Installation
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+## 📡 API Used
+
+https://dragonball-api.com/
+
+---
+
+## 🧠 Key Concepts Used
+
+* useInfiniteQuery (pagination)
+* Intersection Observer (infinite scroll)
+* Optimistic updates (favorites)
+* Context API (search state)
+
+---
+
+## 🐞 Common Issues
+
+### ❌ Showing 0 characters
+
+✔ Ensure:
+
+* `useInfiniteQuery` is used (NOT useQuery)
+* `QueryClientProvider` is added
+* API response mapped correctly (`items → characters`)
+
+---
+
+## 📸 Screenshots
+
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+
+---
+
+## 👨‍💻 Author
+
+Nasim Reja Mondal
+
+---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
