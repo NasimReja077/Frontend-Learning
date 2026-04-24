@@ -1,10 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../features/products/pages/Home.tsx";
-import Create from "../features/products/pages/Create.tsx";
-import Edit from "../features/products/pages/Edit.tsx";
+import App from "../App";
+import Home from "../features/products/pages/Home";
+import Create from "../features/products/pages/Create";
+import Edit from "../features/products/pages/Edit";
 
 export const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
-  { path: "/create", element: <Create /> },
-  { path: "/edit/:id", element: <Edit /> },
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "create", element: <Create /> },
+      { path: "edit/:id", element: <Edit /> },
+    ],
+  },
 ]);
