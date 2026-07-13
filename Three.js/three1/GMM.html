@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometry + Material + Mesh</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: #000; }
+  </style>
+</head>
+<body>
+  <script type="module">
+    import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js';
+
+    // Scene Setup
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x111111);
+
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 4;
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // =====================================
+    // 1. GEOMETRY (The Shape)
+    // =====================================
+    const geometry = new THREE.BoxGeometry(
+      2,   // width
+      2,   // height  
+      2    // depth
+    );
+
+    // You can try other geometries:
+    // const geometry = new THREE.SphereGeometry(1.5, 64, 64);
+    // const geometry = new THREE.CylinderGeometry(1, 1.5, 2.5, 32);
+    // const geometry = new THREE.TorusGeometry(1.2, 0.4, 32, 64);
+
+    // =====================================
+    // 2. MATERIAL (The Appearance)
+    // =====================================
+    const material = new THREE.MeshPhongMaterial({
+      color: 0x44aaff,        // Base color (blue-ish)
+      shininess: 100,         // How shiny it is
+      specular: 0x222222,     // Color of specular highlight
+      // wireframe: true      // Uncomment to see wireframe
+    });
+
+    // Other popular materials:
+    // MeshBasicMaterial     → No lighting
+    // MeshStandardMaterial  → Modern physically based
+    // MeshNormalMaterial    → Rainbow colors based on surface direction
+
+    // =====================================
+    // 3. MESH (Geometry + Material Combined)
+    // =====================================
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);           // Add the mesh to the scene
+
+    // Lights (required for PhongMaterial)
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.2);
+    directionalLight.position.set(5, 10, 8);
+    scene.add(directionalLight);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
+
+    // Animation Loop
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // Rotate the mesh
+      mesh.rotation.x += 0.008;
+      mesh.rotation.y += 0.012;
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Responsive
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
