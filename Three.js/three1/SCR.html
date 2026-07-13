@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scene + Camera + Renderer</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+  </style>
+</head>
+<body>
+  <script type="module">
+    import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js';
+
+    // ========================
+    // 1. SCENE
+    // ========================
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x222222);   // Optional background color
+
+    // ========================
+    // 2. CAMERA
+    // ========================
+    const camera = new THREE.PerspectiveCamera(
+      75,                           // Field of View
+      window.innerWidth / window.innerHeight,  // Aspect Ratio
+      0.1,                          // Near clipping plane
+      1000                          // Far clipping plane
+    );
+    camera.position.z = 3;          // Move camera back so we can see the cube
+
+    // ========================
+    // 3. RENDERER
+    // ========================
+    const renderer = new THREE.WebGLRenderer({ 
+      antialias: true 
+    });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    document.body.appendChild(renderer.domElement);
+
+    // ========================
+    // Object (Mesh) - Added to Scene
+    // ========================
+    const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
+    const material = new THREE.MeshPhongMaterial({ 
+      color: 0x44ff88,
+      shininess: 80 
+    });
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);                    // ← Important: Add to Scene
+
+    // Lights (needed for PhongMaterial)
+    const light = new THREE.DirectionalLight(0xffffff, 1.2);
+    light.position.set(5, 10, 7);
+    scene.add(light);
+
+    const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambient);
+
+    // ========================
+    // Animation Loop
+    // ========================
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // Rotate the cube
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.015;
+
+      // Render the scene from the camera's view
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Resize handler
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
